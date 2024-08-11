@@ -6,7 +6,7 @@
   roles:
     # install yay and flatpak to make sure they are available
     - { role: flatpak, tags: ['flatpak', 'package'] }
-    - { role: yay, tags: ['yay', 'package'] }
+    - { role: paru, tags: ['paru', 'aur', 'package'] }
 
     # install chezmoi, apply the configuration management changes
     - { role: chezmoi, tags: ['chezmoi'] }
@@ -15,6 +15,7 @@
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
     - { role: gnome, tags: ['gnome'] }
+    - { role: mail, tags: ['mail'] }
     - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
     - { role: zsh, tags: ['zsh', 'shell'] }
