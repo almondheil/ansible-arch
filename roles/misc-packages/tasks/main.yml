@@ -33,3 +33,25 @@
   community.general.pacman:
     name: wl-clipboard
     state: present
+
+- name: Install power profiles
+  become: true
+  community.general.pacman:
+    name: power-profiles-daemon
+    state: present
+
+- name: Install flatseal
+  flatpak:
+    name: com.github.tchx84.Flatseal
+    state: present
+
+- name: Install discord
+  flatpak:
+    name: com.discordapp.Discord
+    state: present
+
+- name: Install ripgrep
+  become: true
+  community.general.pacman:
+    name: ripgrep
+    state: present
