@@ -102,6 +102,27 @@
     key: /org/gnome/desktop/wm/keybindings/toggle-fullscreen
     value: "['<Shift><Super>f']"
 
+- name: Set Super+B to launch browser
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys
+    key: www
+    value: "['<Super>b']"
+
+- name: Set Super+E to launch home directory
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys
+    key: home
+    value: "['<Super>e']"
+
+- name: Create custom kitty launch shortcut
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding
+    path: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
+    settings:
+      name: Launch kitty
+      binding: '<Super>t'
+      command: kitty
+
 # ALT TAB
 
 - name: Disable switching applications

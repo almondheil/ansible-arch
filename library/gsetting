@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+# from https://github.com/jistr/ansible-gsetting
+# I just downloaded it like the dev told me to, why the hell not I'm not abt to update it
+
 from os import environ
 import re
 import subprocess
