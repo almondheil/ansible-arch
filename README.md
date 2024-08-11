@@ -3,7 +3,7 @@ Dependencies are:
 Install these packages (on arch):
 
 ```
-sudo pacman -Syu ansible pexpect
+sudo pacman -Syu ansible python-pexpect
 ```
 
 Then, install the ansible collections you need:
