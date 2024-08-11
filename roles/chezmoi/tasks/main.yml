@@ -32,3 +32,8 @@
 
 - name: Apply chezmoi changes
   command: chezmoi apply
+
+- name: Switch chezmoi remote to ssh
+  command:
+    cmd: git remote set-url origin git@github.com:almondheil/dotfiles.git
+    chdir: "{{ home }}/.local/share/chezmoi"
