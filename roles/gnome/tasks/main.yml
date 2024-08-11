@@ -1,4 +1,8 @@
 ---
+#
+# MISC CHANGES
+#
+
 - name: Disable event sounds
   community.general.dconf:
     key: /org/gnome/desktop/sound/event-sounds
@@ -12,7 +16,11 @@
       - sushi
     state: absent
 
-- name: Swap caps and escape
+#
+# KEYBOARD AND TOUCHPAD
+#
+
+- name: Swap keyboard caps and escape
   community.general.dconf:
     key: /org/gnome/desktop/input-sources/xkb-options
     value: "['caps:swapescape']"
@@ -51,3 +59,95 @@
   community.general.dconf:
     key: /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled
     value: "true"
+
+#
+# APP BAR
+#
+
+- name: Set favorite applications to none
+  gsetting:
+    settings:
+      org.gnome.shell.favorite-apps: '[]'
+
+- name: Disable application 1-9 switch shortcuts
+  gsetting:
+    schema: org.gnome.shell.keybindings
+    key: switch-to-application-{{ item }}
+    value: '[]'
+  with_sequence: start=1 end=9
+
+- name: Disable application 1-9 launch shortcuts
+  gsetting:
+    schema: org.gnome.shell.keybindings
+    key: open-new-window-application-{{ item }}
+    value: '[]'
+  with_sequence: start=1 end=9
+
+#
+# SHORTCUTS
+#
+
+- name: Disable Super+V shortcut to open message tray
+  community.general.dconf:
+    key: /org/gnome/shell/keybindings/toggle-message-tray
+    value: "['<Super>m']"
+
+- name: Set Super+F to toggle maximization
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/toggle-maximized
+    value: "['<Super>f']"
+
+- name: Set Super+Shift+F to toggle fullscreen
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/toggle-fullscreen
+    value: "['<Shift><Super>f']"
+
+# ALT TAB
+
+- name: Disable switching applications
+  gsetting:
+    schema: org.gnome.desktop.wm.keybindings
+    key: switch-applications
+    value: '[]'
+
+- name: Disable switching applications backward
+  gsetting:
+    schema: org.gnome.desktop.wm.keybindings
+    key: switch-applications-backward
+    value: '[]'
+
+- name: Use Alt+Tab to switch windows
+  gsetting:
+    schema: org.gnome.desktop.wm.keybindings
+    key: switch-windows
+    value: "['<Alt>Tab']"
+
+- name: Use Alt+Shift+Tab to switch windows backward
+  gsetting:
+    schema: org.gnome.desktop.wm.keybindings
+    key: switch-windows-backward
+    value: "['<Shift><Alt>Tab']"
+    
+# WORKSPACE SWITCHING
+
+- name: Switch between workspaces with Super+[1-9]
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-{{ item }}
+    value: "['<Super>{{ item }}']"
+  with_sequence: start=1 end=9
+
+- name: Switch to workspace 10 with Super+0
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-10
+    value: "['<Super>0']"
+
+- name: Move app between workspaces with Shift+Super+[1-9]
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/move-to-workspace-{{ item }}
+    value: "['<Shift><Super>{{ item }}']"
+  with_sequence: start=1 end=9
+
+- name: Move app to workspace 10 with Shift+Super+0
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/move-to-workspace-10
+    value: "['<Shift><Super>0']"
