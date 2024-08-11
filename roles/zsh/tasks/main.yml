@@ -5,9 +5,10 @@
     name: zsh
     state: present
 
-- name: Change user shell to zsh
-  become: true
-  command: chsh -s /bin/zsh {{ user }}
+- name: Set user shell to zsh
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh
 
 - name: Install Inconsolata nerd font
   become: true

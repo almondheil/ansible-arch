@@ -6,9 +6,7 @@
   roles:
     - { role: chezmoi, tags: ['chezmoi'] }
     - { role: flatpak, tags: ['flatpak', 'package'] }
-    - { role: pacman-apps, tags: ['pacman', 'package'] }
+    - { role: gnome, tags: ['gnome']}
+    - { role: pacman, tags: ['pacman', 'package'] }
     - { role: yay, tags: ['yay', 'package'] }
-    - { role: gnome-misc, tags: ['gnome-misc', 'gnome']}
-    # - { role: gnome-shortcuts, tags: ['gnome-shortcuts', 'gnome']}
-    - { role: gnome-touchpad, tags: ['gnome-touchpad', 'gnome']}
     - { role: zsh, tags: ['zsh', 'shell']}

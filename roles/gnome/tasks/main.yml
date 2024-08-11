@@ -1,4 +1,22 @@
 ---
+- name: Disable event sounds
+  community.general.dconf:
+    key: /org/gnome/desktop/sound/event-sounds
+    value: 'false'
+
+- name: Uninstall Evince browser
+  become: true
+  community.general.pacman:
+    name:
+      - evince
+      - sushi
+    state: absent
+
+- name: Swap caps and escape
+  community.general.dconf:
+    key: /org/gnome/desktop/input-sources/xkb-options
+    value: "['caps:swapescape']"
+
 - name: Enable touchpad fingers click method
   community.general.dconf:
     key: /org/gnome/desktop/peripherals/touchpad/tap-to-click
