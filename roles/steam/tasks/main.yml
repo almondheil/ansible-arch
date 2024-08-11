@@ -1,0 +1,21 @@
+---
+- name: Enable multilib repo
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/pacman.conf
+    block: |
+      [multilib]
+      Include = /etc/pacman.d/mirrorlist
+
+- name: Install vulkan for Intel integrated graphics
+  become: true
+  community.general.pacman:
+    update_cache: true
+    name: lib32-vulkan-intel
+    state: present
+
+- name: Install steam
+  become: true
+  community.general.pacman:
+    name: steam
+    state: present

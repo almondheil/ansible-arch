@@ -18,4 +18,5 @@
     - { role: mail, tags: ['mail'] }
     - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
+    - { role: steam, tags: ['steam'] }
     - { role: zsh, tags: ['zsh', 'shell'] }
