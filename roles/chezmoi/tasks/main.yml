@@ -11,26 +11,23 @@
 - name: Initialize chezmoi
   command:
     cmd: chezmoi init --verbose almondheil
-    creates: ~/.local/share/chezmoi
+    creates: "{{ home }}/.local/share/chezmoi"
 
 - name: Copy chezmoi config
   copy:
     src: chezmoi.toml
-    dest: ~/.config/chezmoi/chezmoi.toml
+    dest: "{{ home }}/.config/chezmoi/chezmoi.toml"
 
 - name: Decrypt chezmoi age key
   expect:
-    # TODO: get the damn env vars set if work
-    command: age -d -o "/home/almond/.config/chezmoi/key.txt" "/home/almond/.local/share/chezmoi/key.txt.age"
+    command: age -d -o "{{ home }}/.config/chezmoi/key.txt" "{{ home }}/.local/share/chezmoi/key.txt.age"
     responses:
       "Enter passphrase:": "{{ chezmoi_passphrase }}"
-    #creates: ~/.config/chezmoi/key.txt
-  # hide passphrase in logs
-  #no_log: true
+    creates: "{{ home }}/.config/chezmoi/key.txt"
 
 - name: Set permissions on chezmoi age key
   file:
-    path: ~/.config/chezmoi/key.txt
+    path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
 
 - name: Apply chezmoi changes
