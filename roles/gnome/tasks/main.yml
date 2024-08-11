@@ -1,174 +1,30 @@
 ---
-#
-# MISC CHANGES
-#
-
+# these are all in their own lil category, wheter I didn't feel like they fit anywhere
 - name: Disable event sounds
   community.general.dconf:
     key: /org/gnome/desktop/sound/event-sounds
     value: 'false'
 
-- name: Uninstall Evince browser
-  become: true
-  community.general.pacman:
-    name:
-      - evince
-      - sushi
-    state: absent
-
-#
-# KEYBOARD AND TOUCHPAD
-#
+- name: Set favorite applications to none
+  gsetting:
+    schema: org.gnome.shell
+    key: favorite-apps
+    value: '[]'
 
 - name: Swap keyboard caps and escape
   community.general.dconf:
     key: /org/gnome/desktop/input-sources/xkb-options
     value: "['caps:swapescape']"
 
-- name: Enable touchpad fingers click method
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/tap-to-click
-    value: "'fingers'"
-
-- name: Enable touchpad disable while typing
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/disable-while-typing
-    value: "true"
-
-- name: Disable touchpad edge scrolling
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/edge-scrolling-enabled
-    value: "false"
-
-- name: Enable touchpad middle click emulation
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/middle-click-emulation
-    value: "true"
-
-- name: Enable touchpad natural scrolling
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/natural-scroll
-    value: "true"
-
-- name: Enable touchpad tap to click
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/tap-to-click
-    value: "true"
-
-- name: Enable touchpad two finger scrolling
-  community.general.dconf:
-    key: /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled
-    value: "true"
-
-#
-# APP BAR
-#
-
-- name: Set favorite applications to none
+- name: Set colorscheme to dark
   gsetting:
-    settings:
-      org.gnome.shell.favorite-apps: '[]'
+    schema: org.gnome.desktop.interface
+    key: color-scheme
+    value: "'prefer-dark'"
 
-- name: Disable application 1-9 switch shortcuts
-  gsetting:
-    schema: org.gnome.shell.keybindings
-    key: switch-to-application-{{ item }}
-    value: '[]'
-  with_sequence: start=1 end=9
-
-- name: Disable application 1-9 launch shortcuts
-  gsetting:
-    schema: org.gnome.shell.keybindings
-    key: open-new-window-application-{{ item }}
-    value: '[]'
-  with_sequence: start=1 end=9
-
-#
-# SHORTCUTS
-#
-
-- name: Disable Super+V shortcut to open message tray
-  community.general.dconf:
-    key: /org/gnome/shell/keybindings/toggle-message-tray
-    value: "['<Super>m']"
-
-- name: Set Super+F to toggle maximization
-  community.general.dconf:
-    key: /org/gnome/desktop/wm/keybindings/toggle-maximized
-    value: "['<Super>f']"
-
-- name: Set Super+Shift+F to toggle fullscreen
-  community.general.dconf:
-    key: /org/gnome/desktop/wm/keybindings/toggle-fullscreen
-    value: "['<Shift><Super>f']"
-
-- name: Set Super+B to launch browser
-  gsetting:
-    schema: org.gnome.settings-daemon.plugins.media-keys
-    key: www
-    value: "['<Super>b']"
-
-- name: Set Super+E to launch home directory
-  gsetting:
-    schema: org.gnome.settings-daemon.plugins.media-keys
-    key: home
-    value: "['<Super>e']"
-
-- name: Create custom kitty launch shortcut
-  gsetting:
-    schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding
-    path: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
-    settings:
-      name: Launch kitty
-      binding: '<Super>t'
-      command: kitty
-
-# ALT TAB
-
-- name: Disable switching applications
-  gsetting:
-    schema: org.gnome.desktop.wm.keybindings
-    key: switch-applications
-    value: '[]'
-
-- name: Disable switching applications backward
-  gsetting:
-    schema: org.gnome.desktop.wm.keybindings
-    key: switch-applications-backward
-    value: '[]'
-
-- name: Use Alt+Tab to switch windows
-  gsetting:
-    schema: org.gnome.desktop.wm.keybindings
-    key: switch-windows
-    value: "['<Alt>Tab']"
-
-- name: Use Alt+Shift+Tab to switch windows backward
-  gsetting:
-    schema: org.gnome.desktop.wm.keybindings
-    key: switch-windows-backward
-    value: "['<Shift><Alt>Tab']"
-    
-# WORKSPACE SWITCHING
-
-- name: Switch between workspaces with Super+[1-9]
-  community.general.dconf:
-    key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-{{ item }}
-    value: "['<Super>{{ item }}']"
-  with_sequence: start=1 end=9
-
-- name: Switch to workspace 10 with Super+0
-  community.general.dconf:
-    key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-10
-    value: "['<Super>0']"
-
-- name: Move app between workspaces with Shift+Super+[1-9]
-  community.general.dconf:
-    key: /org/gnome/desktop/wm/keybindings/move-to-workspace-{{ item }}
-    value: "['<Shift><Super>{{ item }}']"
-  with_sequence: start=1 end=9
-
-- name: Move app to workspace 10 with Shift+Super+0
-  community.general.dconf:
-    key: /org/gnome/desktop/wm/keybindings/move-to-workspace-10
-    value: "['<Shift><Super>0']"
+# these are all larger, so import them instead of just having them here
+- import_tasks: apps.yml
+- import_tasks: touchpad.yml
+- import_tasks: shortcuts.yml
+- import_tasks: alt_tab.yml
+- import_tasks: workspace_switching.yml

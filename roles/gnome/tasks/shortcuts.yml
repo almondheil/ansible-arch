@@ -1,0 +1,50 @@
+---
+- name: Disable application 1-9 switch shortcuts
+  gsetting:
+    schema: org.gnome.shell.keybindings
+    key: switch-to-application-{{ item }}
+    value: '[]'
+  with_sequence: start=1 end=9
+
+- name: Disable application 1-9 launch shortcuts
+  gsetting:
+    schema: org.gnome.shell.keybindings
+    key: open-new-window-application-{{ item }}
+    value: '[]'
+  with_sequence: start=1 end=9
+
+- name: Disable Super+V shortcut to open message tray
+  community.general.dconf:
+    key: /org/gnome/shell/keybindings/toggle-message-tray
+    value: "['<Super>m']"
+
+- name: Set Super+F to toggle maximization
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/toggle-maximized
+    value: "['<Super>f']"
+
+- name: Set Super+Shift+F to toggle fullscreen
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/toggle-fullscreen
+    value: "['<Shift><Super>f']"
+
+- name: Set Super+B to launch browser
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys
+    key: www
+    value: "['<Super>b']"
+
+- name: Set Super+E to launch home directory
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys
+    key: home
+    value: "['<Super>e']"
+
+- name: Create custom kitty launch shortcut
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding
+    path: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
+    settings:
+      name: Launch kitty
+      binding: '<Super>t'
+      command: kitty

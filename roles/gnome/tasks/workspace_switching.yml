@@ -1,0 +1,22 @@
+---
+- name: Switch between workspaces with Super+[1-9]
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-{{ item }}
+    value: "['<Super>{{ item }}']"
+  with_sequence: start=1 end=9
+
+- name: Switch to workspace 10 with Super+0
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-10
+    value: "['<Super>0']"
+
+- name: Move app between workspaces with Shift+Super+[1-9]
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/move-to-workspace-{{ item }}
+    value: "['<Shift><Super>{{ item }}']"
+  with_sequence: start=1 end=9
+
+- name: Move app to workspace 10 with Shift+Super+0
+  community.general.dconf:
+    key: /org/gnome/desktop/wm/keybindings/move-to-workspace-10
+    value: "['<Shift><Super>0']"

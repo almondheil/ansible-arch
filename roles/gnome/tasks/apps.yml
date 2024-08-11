@@ -1,0 +1,19 @@
+---
+- name: Uninstall Evince browser
+  become: true
+  community.general.pacman:
+    name:
+      - evince
+      - sushi
+    state: absent
+
+- name: Uninstall default gnome extensions
+  become: true
+  community.general.pacman:
+    name: gnome-shell-extensions
+    state: absent
+
+- name: Install better gnome shell extensions from flathub
+  community.general.flatpak:
+    name: com.mattjakeman.ExtensionManager
+    state: present
