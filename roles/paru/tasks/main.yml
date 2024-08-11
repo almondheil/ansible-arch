@@ -17,9 +17,23 @@
     mode: 0440
     validate: 'visudo -cf %s'
 
-- name: Install yay through the aur
+- name: Install rustup
+  become: yes
+  community.general.pacman:
+    name: rustup
+    state: present
+
+- name: Set `aur_builder` rustup version to stable
+  become: yes
+  become_user: aur_builder
+  command: rustup default stable
+
+- name: Set running user rustup version to stable
+  command: rustup default stable
+
+- name: Install paru through the aur
   kewlfft.aur.aur:
-    name: yay
+    name: paru
     state: present
     use: makepkg
   become: yes
