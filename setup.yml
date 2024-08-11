@@ -1,0 +1,7 @@
+---
+- hosts: laptop
+  vars_prompt:
+    - name: chezmoi_passphrase
+      prompt: Chezmoi encrpyion passphrase
+  roles:
+    - { role: chezmoi, tags: ['chezmoi'] }
