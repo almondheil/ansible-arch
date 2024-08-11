@@ -1,0 +1,35 @@
+---
+- name: Enable touchpad fingers click method
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/tap-to-click
+    value: "'fingers'"
+
+- name: Enable touchpad disable while typing
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/disable-while-typing
+    value: "true"
+
+- name: Disable touchpad edge scrolling
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/edge-scrolling-enabled
+    value: "false"
+
+- name: Enable touchpad middle click emulation
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/middle-click-emulation
+    value: "true"
+
+- name: Enable touchpad natural scrolling
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/natural-scroll
+    value: "true"
+
+- name: Enable touchpad tap to click
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/tap-to-click
+    value: "true"
+
+- name: Enable touchpad two finger scrolling
+  community.general.dconf:
+    key: /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled
+    value: "true"

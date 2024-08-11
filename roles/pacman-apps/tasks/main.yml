@@ -1,0 +1,29 @@
+---
+- name: Install Kitty terminal emulator
+  become: true
+  community.general.pacman:
+    name: kitty
+    state: present
+
+- name: Install Seahorse password manager
+  become: true
+  community.general.pacman:
+    name: seahorse
+    state: present
+
+- name: Install terminal text toys
+  become: true
+  community.general.pacman:
+    name:
+      - tree
+      - cowsay
+      - fortune-mod
+      - figlet
+      - lolcat
+    state: present
+
+- name: Install man pages
+  become: true
+  community.general.pacman:
+    name: man-db
+    state: present

@@ -1,0 +1,32 @@
+---
+- name: Install zsh
+  become: true
+  community.general.pacman:
+    name: zsh
+    state: present
+
+- name: Change user shell to zsh
+  become: true
+  command: chsh -s /bin/zsh {{ user }}
+
+- name: Install Inconsolata nerd font
+  become: true
+  community.general.pacman:
+    name: ttf-inconsolata-nerd
+    state: present
+
+# https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
+- name: Install oh-my-zsh from git
+  git:
+    repo: "https://github.com/robbyrussell/oh-my-zsh"
+    dest: "{{ home }}/.oh-my-zsh"
+    version: master
+    update: no
+
+# https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
+- name: Set permissions on .oh-my-zsh directory
+  file:
+    path: "{{ home }}/.oh-my-zsh"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0750'

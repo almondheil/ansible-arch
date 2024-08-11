@@ -1,1 +1,2 @@
-home: "/home/almond"
+user: "almond"
+home: "/home/{{ user }}"
