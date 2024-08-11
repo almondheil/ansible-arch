@@ -27,3 +27,9 @@
   community.general.pacman:
     name: man-db
     state: present
+
+- name: Install wayland clipboard
+  become: true
+  community.general.pacman:
+    name: wl-clipboard
+    state: present
