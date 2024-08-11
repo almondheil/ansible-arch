@@ -5,13 +5,14 @@
       prompt: Chezmoi encrpyion passphrase
   roles:
     # install yay and flatpak to make sure they are available
-    - { role: yay, tags: ['yay', 'package'] }
     - { role: flatpak, tags: ['flatpak', 'package'] }
+    - { role: yay, tags: ['yay', 'package'] }
 
     # install chezmoi, apply the configuration management changes
     - { role: chezmoi, tags: ['chezmoi'] }
 
     # do app-specific administration
+    - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
     - { role: gnome, tags: ['gnome'] }
     - { role: misc-packages, tags: ['misc-packages'] }

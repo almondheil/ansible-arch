@@ -22,6 +22,12 @@
     key: color-scheme
     value: "'prefer-dark'"
 
+- name: Do not attach modal dialogs
+  gsetting:
+    schema: org.gnome.mutter
+    key: attach-modal-dialogs
+    value: 'false'
+
 # these are all larger, so import them instead of just having them here
 - import_tasks: apps.yml
 - import_tasks: touchpad.yml

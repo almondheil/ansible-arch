@@ -1,0 +1,24 @@
+- name: Install fprintd
+  become: true
+  community.general.pacman:
+    name: fprintd
+    state: present
+
+- name: Add user to the input group
+  become: true
+  user:
+    name: "{{ user }}"
+    groups: input
+    append: yes
+
+- name: Install fprintd_grosshack pam unit
+  kewlfft.aur.aur:
+    name: pam-fprint-grosshack
+    state: present
+    use: yay
+
+- name: Allow fprintd_grosshack authentication for sudo
+  become: true
+  copy:
+    src: sudo-pam-unit
+    dest: /etc/pam.d/sudo
