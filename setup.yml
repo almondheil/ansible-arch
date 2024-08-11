@@ -4,9 +4,16 @@
     - name: chezmoi_passphrase
       prompt: Chezmoi encrpyion passphrase
   roles:
-    - { role: chezmoi, tags: ['chezmoi'] }
-    - { role: flatpak, tags: ['flatpak', 'package'] }
-    - { role: gnome, tags: ['gnome']}
-    - { role: pacman, tags: ['pacman', 'package'] }
+    # install yay and flatpak to make sure they are available
     - { role: yay, tags: ['yay', 'package'] }
-    - { role: zsh, tags: ['zsh', 'shell']}
+    - { role: flatpak, tags: ['flatpak', 'package'] }
+
+    # install chezmoi, apply the configuration management changes
+    - { role: chezmoi, tags: ['chezmoi'] }
+
+    # do app-specific administration
+    - { role: firefox, tags: ['firefox'] }
+    - { role: gnome, tags: ['gnome'] }
+    - { role: misc-packages, tags: ['misc-packages'] }
+    - { role: nextcloud, tags: ['nextcloud'] }
+    - { role: zsh, tags: ['zsh', 'shell'] }
