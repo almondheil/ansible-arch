@@ -5,3 +5,7 @@
       prompt: Chezmoi encrpyion passphrase
   roles:
     - { role: chezmoi, tags: ['chezmoi'] }
+    - { role: flatpak, tags: ['flatpak', 'package'] }
+    - { role: kitty, tags: ['kitty'] }
+    - { role: yay, tags: ['yay', 'package'] }
+
