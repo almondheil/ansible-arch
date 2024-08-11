@@ -19,6 +19,7 @@
     dest: "{{ home }}/.config/chezmoi/chezmoi.toml"
 
 - name: Decrypt chezmoi age key
+  # requires pexpect python package to run
   expect:
     command: age -d -o "{{ home }}/.config/chezmoi/key.txt" "{{ home }}/.local/share/chezmoi/key.txt.age"
     responses:
