@@ -14,12 +14,22 @@
       - ripgrep
     state: present
 
+- name: Clone from git
+  git:
+    # clone the master version, and not the 1.4 release version
+    # as of 2024-08-11, this fixes https://github.com/LunarVim/LunarVim/issues/4477
+    # (should get fixed in 1.5 release)
+    repo: https://github.com/LunarVim/LunarVim.git
+    dest: /tmp/lunarvim
+
 - name: Run install script
   shell:
     creates: "{{ home }}/.local/bin/lvim"
     cmd: |
-      LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
-      send 'y' # node dependencies
-      send 'n' # python dependency pynvim (already installed, would cause crash by calling pip)
-      send 'y' # rust dependencies
-      exit 0
+      export LV_BRANCH={{ lvim_release | quote }}
+      bash /tmp/lunarvim/utils/installer/install.sh -y
+
+- name: Cleanup git repo
+  file:
+    path: /tmp/lunarvim
+    state: absent
