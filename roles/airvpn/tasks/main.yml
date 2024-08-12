@@ -1,7 +1,8 @@
-- name: Install openvpn
+---
+- name: Install wireguard
   become: true
   community.general.pacman:
-    name: openvpn
+    name: wireguard-tools
     state: present
 
 - name: Install net-tools for ifconfig
@@ -17,21 +18,8 @@
     enabled: true
     state: started
 
-- name: Install update-systemd-resolved from aur
-  kewlfft.aur.aur:
-    name: openvpn-update-systemd-resolved
+- name: Install systemd resolvconf
+  become: true
+  community.general.pacman:
+    name: systemd-resolvconf
     state: present
-
-- name: Copy up script to openvpn directory
-  become: true
-  copy:
-    src: up.sh
-    dest: /etc/openvpn/up.sh
-    mode: '0755'
-
-- name: Copy script to openvpn directory
-  become: true
-  copy:
-    src: down.sh
-    dest: /etc/openvpn/down.sh
-    mode: '0755'
