@@ -1,0 +1,16 @@
+---
+- name: Install aseprite build dependencies
+  community.general.pacman:
+    name:
+      - clang
+      - cmark
+      - compiler-rt
+      - fmt
+      - gn
+      - tinyxml2
+    state: present
+
+- name: Build aseprite from aur
+  kewlfft.aur.aur:
+    name: aseprite
+    state: present

@@ -12,6 +12,7 @@
     - { role: chezmoi, tags: ['chezmoi'] }
 
     # do app-specific administration
+    - { role: aseprite, tags: ['aseprite'] }
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
     - { role: gnome, tags: ['gnome'] }
