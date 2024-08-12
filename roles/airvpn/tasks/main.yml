@@ -1,0 +1,37 @@
+- name: Install openvpn
+  become: true
+  community.general.pacman:
+    name: openvpn
+    state: present
+
+- name: Install net-tools for ifconfig
+  become: true
+  community.general.pacman:
+    name: net-tools
+    state: present
+
+- name: Enable and start systemd-resolved service
+  become: true
+  service:
+    name: systemd-resolved
+    enabled: true
+    state: started
+
+- name: Install update-systemd-resolved from aur
+  kewlfft.aur.aur:
+    name: openvpn-update-systemd-resolved
+    state: present
+
+- name: Copy up script to openvpn directory
+  become: true
+  copy:
+    src: up.sh
+    dest: /etc/openvpn/up.sh
+    mode: '0755'
+
+- name: Copy script to openvpn directory
+  become: true
+  copy:
+    src: down.sh
+    dest: /etc/openvpn/down.sh
+    mode: '0755'

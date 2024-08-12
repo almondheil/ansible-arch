@@ -12,6 +12,7 @@
     - { role: chezmoi, tags: ['chezmoi'] }
 
     # do app-specific administration
+    - { role: airvpn, tags: ['airvpn', 'vpn'] }
     - { role: aseprite, tags: ['aseprite'] }
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
@@ -21,4 +22,5 @@
     - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
     - { role: steam, tags: ['steam'] }
+    - { role: tailscale, tags: ['tailscale', 'vpn'] }
     - { role: zsh, tags: ['zsh', 'shell'] }

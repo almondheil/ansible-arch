@@ -1,0 +1,13 @@
+---
+- name: Install tailscale
+  become: true
+  community.general.pacman:
+    name: tailscale
+    state: present
+
+- name: Enable and start tailscale service
+  become: true
+  service:
+    name: tailscaled
+    enabled: true
+    state: started
