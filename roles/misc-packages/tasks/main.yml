@@ -64,3 +64,8 @@
       - okular
       - ghostwriter
     state: present
+
+- name: Install todo.txt from aur
+  kewlfft.aur.aur:
+    name: todotxt
+    state: present
