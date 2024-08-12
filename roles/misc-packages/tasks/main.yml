@@ -55,3 +55,12 @@
   community.general.pacman:
     name: ripgrep
     state: present
+
+- name: Install preffered KDE editors
+  become: true
+  community.general.pacman:
+    name:
+      - gwenview
+      - okular
+      - ghostwriter
+    state: present
