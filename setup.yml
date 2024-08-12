@@ -16,6 +16,7 @@
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
     - { role: gnome, tags: ['gnome'] }
+    - { role: lvim, tags: ['lvim'] }
     - { role: mail, tags: ['mail'] }
     - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
