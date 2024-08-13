@@ -31,8 +31,8 @@
     path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
 
-- name: Apply chezmoi changes
-  command: chezmoi apply
+# Used to `chezmoi apply` here, but it's better not to -- we already decrypt the key, which is the big one
+# It prompts if files would be overwritten, which isn't worth it.
 
 - name: Switch chezmoi remote to ssh
   command:
