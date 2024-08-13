@@ -1,4 +1,10 @@
 ---
+- name: Disable hot corners
+  gsetting:
+    schema: org.gnome.desktop.interface
+    key: enable-hot-corners
+    value: 'false'
+
 - name: Disable application 1-9 switch shortcuts
   gsetting:
     schema: org.gnome.shell.keybindings
