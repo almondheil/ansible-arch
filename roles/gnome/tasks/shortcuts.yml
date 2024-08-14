@@ -54,3 +54,12 @@
       name: Launch kitty
       binding: '<Super>t'
       command: kitty
+
+- name: Create custom shortcut to toggle touchpad DWT
+  gsetting:
+    schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding
+    path: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1
+    settings:
+      name: Toggle touchpad DWT
+      binding: '<Shift><Super>d'
+      command: /home/almond/.local/script/gnome-toggle-dwt
