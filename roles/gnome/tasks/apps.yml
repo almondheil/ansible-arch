@@ -1,5 +1,11 @@
 ---
-- name: Uninstall Evince browser
+- name: Uninstall Epiphany browser
+  become: true
+  community.general.pacman:
+    name: epiphany
+    state: absent
+
+- name: Uninstall evince document viewer
   become: true
   community.general.pacman:
     name:
