@@ -1,0 +1,69 @@
+- name: Remove the @.snapshots subvolume if it exists
+  become: true
+  shell: |
+    if btrfs subvolume list / | grep 'path @.snapshots'; then
+      mkdir -p /btrfs_root
+      mount /dev/nvme0n1p2 /btrfs_root
+      btrfs subvolume delete /btrfs_root/@.snapshots
+      umount /btrfs_root
+      rm -d /btrfs_root
+      exit 0
+    else
+      exit 31
+    fi
+  # this is jank, so I'll explain.
+  # - to indicate "ok", I exit 31.
+  # - to indicate "changed", I exit 0.
+  # anything else is therefore an error
+  # I am gambling that nobody else is silly enough to return 31
+  register: remove_result
+  changed_when: "remove_result.rc != 31"
+  failed_when: "remove_result.rc != 31 and remove_result.rc != 0"
+
+- name: Make sure @.snapshots is not in fstab
+  become: true
+  ansible.posix.mount:
+    path: /.snapshots
+    fstype: btrfs
+    opts: subvol=/@.snapshots
+    state: absent
+
+- name: Install snapper
+  become: true
+  community.general.pacman:
+    name: snapper
+    state: present
+
+- name: Create snapper config root over /
+  become: true
+  command:
+    cmd: snapper -c root create-config /
+    creates: /etc/snapper/configs/root
+
+- name: Create snapper config home over /home
+  become: true
+  command:
+    cmd: snapper -c home create-config /home
+    creates: /etc/snapper/configs/home
+
+- name: Copy snapper config files into place
+  become: true
+  copy:
+    src: "{{ item }}"
+    dest: /etc/snapper/configs/{{ item }}
+  loop:
+    - home
+    - root
+
+- name: Enable snapper-timeline systemd timer
+  become: true
+  systemd:
+    name: snapper-timeline.timer
+    state: started
+    enabled: true
+
+- name: Install snap-pac to enable pacman snapshots
+  become: true
+  community.general.pacman:
+    name: snap-pac
+    state: present

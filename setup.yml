@@ -21,6 +21,7 @@
     - { role: mail, tags: ['mail'] }
     - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
+    - { role: snapper, tags: ['snapper', 'btrfs'] }
     - { role: steam, tags: ['steam'] }
     - { role: superdrive, tags: ['superdrive', 'udev'] }
     - { role: tailscale, tags: ['tailscale', 'vpn'] }
