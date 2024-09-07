@@ -1,5 +1,6 @@
 ---
 - name: Install aseprite build dependencies
+  become: true
   community.general.pacman:
     name:
       - clang

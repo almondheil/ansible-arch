@@ -6,6 +6,7 @@
     state: present
 
 - name: Set user shell to zsh
+  become: true
   user:
     name: "{{ user }}"
     shell: /bin/zsh

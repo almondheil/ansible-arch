@@ -15,7 +15,7 @@
   kewlfft.aur.aur:
     name: pam-fprint-grosshack
     state: present
-    use: yay
+    use: paru
 
 - name: Allow fprintd_grosshack authentication for sudo
   become: true
