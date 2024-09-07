@@ -1,0 +1,16 @@
+---
+- name: Install opam
+  become: true
+  community.general.pacman:
+    name: opam
+    state: present
+
+- name: Initialize opam without updating .zshrc
+  command:
+    cmd: opam init --no-setup
+    creates: "{{ home }}/.opam"
+
+- name: Install base ocaml development packages
+  command:
+    cmd: opam install --confirm-level=yes ocaml-lsp-server odoc ocamlformat utop
+    creates: "{{ home }}/.opam/default/bin/utop"
