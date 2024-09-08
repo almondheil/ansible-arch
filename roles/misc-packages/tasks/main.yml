@@ -15,11 +15,12 @@
   become: true
   community.general.pacman:
     name:
-      - tree
+      - cmatrix
       - cowsay
-      - fortune-mod
       - figlet
+      - fortune-mod
       - lolcat
+      - tree
     state: present
 
 - name: Install man pages
@@ -83,4 +84,10 @@
 - name: Install todo.txt from aur
   kewlfft.aur.aur:
     name: todotxt
+    state: present
+
+- name: Install trash-cli
+  become: true
+  community.general.pacman:
+    name: trash-cli
     state: present
