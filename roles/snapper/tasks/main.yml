@@ -62,7 +62,7 @@
     state: started
     enabled: true
 
-- name: Install snap-pac to enable pacman snapshots
+- name: Install snap-pac for snapshots on package changes
   become: true
   community.general.pacman:
     name: snap-pac
