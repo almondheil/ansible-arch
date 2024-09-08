@@ -91,3 +91,15 @@
   community.general.pacman:
     name: trash-cli
     state: present
+
+- name: Install fzf
+  become: true
+  community.general.pacman:
+    name: fzf
+    state: present
+
+- name: Install python-pyfzf
+  become: true
+  community.general.pacman:
+    name: python-pyfzf
+    state: present
