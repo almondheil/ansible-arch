@@ -40,14 +40,29 @@
     name: power-profiles-daemon
     state: present
 
-- name: Install flatseal
+- name: Install Flatseal
   flatpak:
     name: com.github.tchx84.Flatseal
     state: present
 
-- name: Install discord
+- name: Install Discord
   flatpak:
     name: com.discordapp.Discord
+    state: present
+
+- name: Install M$ teams
+  flatpak:
+    name: com.github.IsmaelMartinez.teams_for_linux
+    state: present
+
+- name: Install GIMP
+  flatpak:
+    name: org.gimp.GIMP
+    state: present
+
+- name: Install Zotero
+  flatpak:
+    name: org.zotero.Zotero
     state: present
 
 - name: Install ripgrep
