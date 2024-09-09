@@ -2,3 +2,12 @@
   community.general.flatpak:
     name: org.mozilla.firefox
     state: present
+
+- name: Delete firefox from system repos
+  become: true
+  community.general.pacman:
+    name: firefox
+    state: absent
+
+- name: Override firefox to allow readonly home dir access
+  command: flatpak --user override --filesystem=home:ro org.mozilla.firefox
