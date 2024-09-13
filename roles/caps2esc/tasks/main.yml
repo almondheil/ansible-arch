@@ -1,0 +1,24 @@
+- name: Install interception-tools
+  become: true
+  community.general.pacman:
+    name: interception-tools
+    state: present
+
+- name: Install interception-tools caps2esc plugin
+  become: true
+  community.general.pacman:
+    name: interception-caps2esc
+    state: present
+
+- name: Start and enable udevmon systemd service
+  become: true
+  systemd:
+    name: udevmon.service
+    state: started
+    enabled: true
+
+- name: Drop caps2esc udevmon configuration
+  become: true
+  copy:
+    src: udevmon_job.yaml
+    dest: /etc/interception/udevmon.d/caps2esc.yaml

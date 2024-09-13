@@ -11,11 +11,6 @@
     key: favorite-apps
     value: '[]'
 
-- name: Swap keyboard caps and escape
-  community.general.dconf:
-    key: /org/gnome/desktop/input-sources/xkb-options
-    value: "['caps:swapescape']"
-
 - name: Set colorscheme to dark
   gsetting:
     schema: org.gnome.desktop.interface
