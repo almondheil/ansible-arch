@@ -61,11 +61,6 @@
     name: org.gimp.GIMP
     state: present
 
-- name: Install Zotero
-  flatpak:
-    name: org.zotero.Zotero
-    state: present
-
 - name: Install ripgrep
   become: true
   community.general.pacman:
