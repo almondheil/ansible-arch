@@ -5,8 +5,8 @@
       prompt: Chezmoi encrpyion passphrase
   roles:
     # install yay and flatpak to make sure they are available
+    - { role: aur-helper, tags: ['aur-helper', 'aur', 'package'] }
     - { role: flatpak, tags: ['flatpak', 'package'] }
-    - { role: paru, tags: ['paru', 'aur', 'package'] }
 
     # install chezmoi, apply the configuration management changes
     - { role: chezmoi, tags: ['chezmoi'] }
