@@ -5,18 +5,12 @@
     name: epiphany
     state: absent
 
-- name: Uninstall evince document viewer
+- name: Uninstall Evince document viewer
   become: true
   community.general.pacman:
     name:
       - evince
       - sushi
-    state: absent
-
-- name: Uninstall default gnome extensions
-  become: true
-  community.general.pacman:
-    name: gnome-shell-extensions
     state: absent
 
 - name: Install better gnome shell extensions from flathub
