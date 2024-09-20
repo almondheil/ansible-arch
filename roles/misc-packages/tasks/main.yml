@@ -104,3 +104,9 @@
   community.general.pacman:
     name: ripgrep
     state: present
+
+- name: Install plocate
+  become: true
+  community.general.pacman:
+    name: plocate
+    state: present
