@@ -98,3 +98,9 @@
   community.general.pacman:
     name: python-pyfzf
     state: present
+
+- name: Install ripgrep
+  become: true
+  community.general.pacman:
+    name: ripgrep
+    state: present
