@@ -18,6 +18,7 @@
     - { role: caps2esc, tags: ['caps2esc'] }
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
+    - { role: fonts, tags: ['fonts'] }
     - { role: framework, tags: ['framework'] }
     - { role: gnome, tags: ['gnome'] }
     - { role: mail, tags: ['mail'] }
@@ -29,4 +30,4 @@
     - { role: superdrive, tags: ['superdrive', 'udev'] }
     - { role: tailscale, tags: ['tailscale', 'vpn'] }
     - { role: zotero, tags: ['zotero'] }
-    - { role: zsh, tags: ['zsh', 'shell'] }
+    - { role: zsh, tags: ['zsh'] }

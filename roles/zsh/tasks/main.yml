@@ -11,12 +11,6 @@
     name: "{{ user }}"
     shell: /bin/zsh
 
-- name: Install Inconsolata nerd font
-  become: true
-  community.general.pacman:
-    name: ttf-inconsolata-nerd
-    state: present
-
 # https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
 - name: Install oh-my-zsh from git
   git:
