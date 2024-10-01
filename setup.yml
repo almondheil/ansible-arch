@@ -21,6 +21,7 @@
     - { role: fonts, tags: ['fonts'] }
     - { role: framework, tags: ['framework'] }
     - { role: gnome, tags: ['gnome'] }
+    - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
     - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
