@@ -3,3 +3,8 @@
   community.general.pacman:
     name: firefox
     state: present
+
+- name: Install firefox from flatpak
+  flatpak:
+    name: org.mozilla.firefox
+    state: present
