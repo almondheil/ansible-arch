@@ -26,13 +26,10 @@
       "Enter passphrase:": "{{ chezmoi_passphrase }}"
     creates: "{{ home }}/.config/chezmoi/key.txt"
 
-- name: Set permissions on chezmoi age key
+- name: Set restricted permissions on chezmoi age key
   file:
     path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
-
-# Used to `chezmoi apply` here, but it's better not to -- we already decrypt the key, which is the big one
-# It prompts if files would be overwritten, which isn't worth it.
 
 - name: Switch chezmoi remote to ssh
   command:
