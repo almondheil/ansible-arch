@@ -1,0 +1,21 @@
+---
+- name: Install Discord
+  community.general.flatpak:
+    name: com.discordapp.Discord
+    state: present
+
+- name: Install M$ teams
+  community.general.flatpak:
+    name: com.github.IsmaelMartinez.teams_for_linux
+    state: present
+
+- name: Install ZapZap (WhatsApp client)
+  community.general.flatpak:
+    name: com.rtosta.zapzap
+    state: present
+
+- name: Install Signal client
+  community.general.flatpak:
+    name: org.signal.Signal
+    state: present
+

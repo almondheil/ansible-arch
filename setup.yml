@@ -16,6 +16,8 @@
     - { role: art-apps, tags: ['art-apps'] }
     - { role: bluetooth, tags: ['bluetooth'] }
     - { role: caps2esc, tags: ['caps2esc'] }
+    - { role: chat-apps, tags: ['chat-apps'] }
+    - { role: editors, tags: ['editors'] }
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
     - { role: fonts, tags: ['fonts'] }
@@ -23,12 +25,12 @@
     - { role: gnome, tags: ['gnome'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
-    - { role: misc-packages, tags: ['misc-packages'] }
     - { role: nextcloud, tags: ['nextcloud'] }
     - { role: opam, tags: ['opam', 'ocaml'] }
     - { role: snapper, tags: ['snapper', 'btrfs'] }
     - { role: steam, tags: ['steam'] }
     - { role: superdrive, tags: ['superdrive', 'udev'] }
     - { role: tailscale, tags: ['tailscale', 'vpn'] }
+    - { role: tools, tags: ['tools'] }
     - { role: zotero, tags: ['zotero'] }
     - { role: zsh, tags: ['zsh'] }

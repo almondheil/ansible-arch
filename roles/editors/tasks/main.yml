@@ -1,0 +1,17 @@
+---
+- name: Install Gwenview (image editor)
+  become: true
+  community.general.pacman:
+    name: gwenview
+    state: present
+
+- name: Install Okular (pdf viewer)
+  become: true
+  community.general.pacman:
+    name: okular
+    state: present
+
+- name: Install MarkText (markdown editor)
+  community.general.flatpak:
+    name: com.github.marktext.marktext
+    state: present

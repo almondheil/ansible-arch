@@ -1,0 +1,78 @@
+---
+- name: Install fzf and its python package
+  become: true
+  community.general.pacman:
+    name: 
+      - fzf
+      - python-pyfzf
+    state: present
+
+- name: Install kitty (terminal emulator)
+  become: true
+  community.general.pacman:
+    name: kitty
+    state: present
+
+- name: Install man pages
+  become: true
+  community.general.pacman:
+    name: man-db
+    state: present
+
+- name: Install ripgrep
+  become: true
+  community.general.pacman:
+    name: ripgrep
+    state: present
+
+- name: Install seahorse (password manager)
+  become: true
+  community.general.pacman:
+    name: seahorse
+    state: present
+
+- name: Install plocate
+  become: true
+  community.general.pacman:
+    name: plocate
+    state: present
+
+- name: Install power profiles daemon
+  become: true
+  community.general.pacman:
+    name: power-profiles-daemon
+    state: present
+
+- name: Install terminal toys
+  become: true
+  community.general.pacman:
+    name:
+      - cmatrix
+      - cowsay
+      - figlet
+      - fortune-mod
+      - lolcat
+    state: present
+
+- name: Install todo.txt from aur
+  kewlfft.aur.aur:
+    name: todotxt
+    state: present
+
+- name: Install tree
+  become: true
+  community.general.pacman:
+    name: tree
+    state: present
+
+- name: Install trash-cli
+  become: true
+  community.general.pacman:
+    name: trash-cli
+    state: present
+
+- name: Install wayland clipboard
+  become: true
+  community.general.pacman:
+    name: wl-clipboard
+    state: present
