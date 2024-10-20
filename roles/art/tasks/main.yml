@@ -1,0 +1,10 @@
+---
+- name: Install aseprite
+  import_tasks: aseprite.yml
+
+- name: Install gimp
+  import_tasks: gimp.yml
+
+- name: Install inkscape
+  import_tasks: inkscape.yml
+

@@ -1,0 +1,5 @@
+---
+- name: Install GIMP from Flatpak
+  community.general.flatpak:
+    name: org.gimp.GIMP
+    state: present

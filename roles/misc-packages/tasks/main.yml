@@ -56,11 +56,6 @@
     name: com.github.IsmaelMartinez.teams_for_linux
     state: present
 
-- name: Install GIMP
-  flatpak:
-    name: org.gimp.GIMP
-    state: present
-
 - name: Install ripgrep
   become: true
   community.general.pacman:
