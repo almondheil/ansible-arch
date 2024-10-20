@@ -13,7 +13,7 @@
 
     # do app-specific administration
     - { role: airvpn, tags: ['airvpn', 'vpn'] }
-    - { role: art, tags: ['art'] }
+    - { role: art-apps, tags: ['art-apps'] }
     - { role: bluetooth, tags: ['bluetooth'] }
     - { role: caps2esc, tags: ['caps2esc'] }
     - { role: fingerprint, tags: ['fingerprint'] }
