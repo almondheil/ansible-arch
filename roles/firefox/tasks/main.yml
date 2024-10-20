@@ -5,6 +5,6 @@
     state: present
 
 - name: Install firefox from flatpak
-  flatpak:
+  community.general.flatpak:
     name: org.mozilla.firefox
     state: present
