@@ -46,10 +46,10 @@
     cmd: snapper -c home create-config /home
     creates: /etc/snapper/configs/home
 
-- name: Copy snapper config files into place
+- name: Drop snapper config files
   become: true
-  copy:
-    src: "{{ item }}"
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
     dest: /etc/snapper/configs/{{ item }}
   loop:
     - home
