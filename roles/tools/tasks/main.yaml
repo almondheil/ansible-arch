@@ -2,7 +2,7 @@
 - name: Install fzf and its python package
   become: true
   community.general.pacman:
-    name: 
+    name:
       - fzf
       - python-pyfzf
     state: present

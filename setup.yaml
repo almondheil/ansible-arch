@@ -1,5 +1,6 @@
 ---
-- hosts: laptop
+- name: Run whole playbook
+  hosts: laptop
   vars_prompt:
     - name: chezmoi_passphrase
       prompt: Chezmoi encrpyion passphrase
@@ -14,10 +15,10 @@
 
     # everything else
     - { role: airvpn, tags: ['airvpn'] }
-    - { role: art-apps, tags: ['art-apps'] }
+    - { role: art_apps, tags: ['art_apps'] }
     - { role: bluetooth, tags: ['bluetooth'] }
     - { role: caps2esc, tags: ['caps2esc'] }
-    - { role: chat-apps, tags: ['chat-apps'] }
+    - { role: chat_apps, tags: ['chat_apps'] }
     - { role: editors, tags: ['editors'] }
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }

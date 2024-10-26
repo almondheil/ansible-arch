@@ -1,6 +1,7 @@
 - name: Remove the @.snapshots subvolume if it exists
   become: true
   ansible.builtin.shell: |
+    set -o pipefail
     if btrfs subvolume list / | grep 'path @.snapshots'; then
       mkdir -p /btrfs_root
       mount /dev/nvme0n1p2 /btrfs_root
@@ -51,6 +52,7 @@
   ansible.builtin.template:
     src: "{{ item }}.j2"
     dest: /etc/snapper/configs/{{ item }}
+    mode: '0640'
   loop:
     - home
     - root

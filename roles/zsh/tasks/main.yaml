@@ -17,7 +17,7 @@
     repo: "https://github.com/robbyrussell/oh-my-zsh"
     dest: "{{ home }}/.oh-my-zsh"
     version: master
-    update: no
+    update: false
 
 # https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
 - name: Set permissions on .oh-my-zsh directory

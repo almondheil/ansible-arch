@@ -24,8 +24,13 @@
     value: 'false'
 
 # these are all larger, so import them instead of just having them here
-- ansible.builtin.import_tasks: apps.yaml
-- ansible.builtin.import_tasks: touchpad.yaml
-- ansible.builtin.import_tasks: shortcuts.yaml
-- ansible.builtin.import_tasks: alt_tab.yaml
-- ansible.builtin.import_tasks: workspace_switching.yaml
+- name: Import apps tasks
+  ansible.builtin.import_tasks: apps.yaml
+- name: Import touchpad tasks
+  ansible.builtin.import_tasks: touchpad.yaml
+- name: Import shortcuts tasks
+  ansible.builtin.import_tasks: shortcuts.yaml
+- name: Import alt+tab tasks
+  ansible.builtin.import_tasks: alt_tab.yaml
+- name: Import workspace switching tasks
+  ansible.builtin.import_tasks: workspace_switching.yaml

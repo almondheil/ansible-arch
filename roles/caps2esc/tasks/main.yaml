@@ -22,3 +22,4 @@
   ansible.builtin.copy:
     src: udevmon_job.yaml
     dest: /etc/interception/udevmon.d/caps2esc.yaml
+    mode: "0644"

@@ -17,6 +17,7 @@
   ansible.builtin.copy:
     src: chezmoi.toml
     dest: "{{ home }}/.config/chezmoi/chezmoi.toml"
+    mode: '0600'
 
 - name: Decrypt chezmoi age key
   # requires pexpect python package to run
@@ -31,7 +32,8 @@
     path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
 
-- name: Switch chezmoi remote to ssh
-  ansible.builtin.command:
-    cmd: git remote set-url origin git@github.com:almondheil/dotfiles.git
-    chdir: "{{ home }}/.local/share/chezmoi"
+- name: Drop chezmoi git config file to update remote
+  ansible.builtin.copy:
+    src: gitconfig
+    dest: "{{ home }}/.local/share/chezmoi/.git/config"
+    mode: '0644'

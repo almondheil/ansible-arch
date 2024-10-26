@@ -7,4 +7,3 @@
 
 - name: Install inkscape
   ansible.builtin.import_tasks: inkscape.yaml
-

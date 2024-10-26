@@ -2,7 +2,3 @@
   community.general.flatpak:
     name: org.zotero.Zotero
     state: present
-
-- name: Override zotero flatpak to allow access to /opt
-  ansible.builtin.command:
-    cmd: flatpak --user override --filesystem=/opt:ro org.zotero.Zotero

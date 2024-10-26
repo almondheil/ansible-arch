@@ -4,3 +4,4 @@
   ansible.builtin.copy:
     src: no_cros_ec.conf
     dest: /etc/modprobe.d/no_cros_ec.conf
+    mode: '0644'

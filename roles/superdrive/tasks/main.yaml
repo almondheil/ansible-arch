@@ -8,7 +8,7 @@
 - name: Install libdvdcss
   become: true
   community.general.pacman:
-    name: libdvdcss 
+    name: libdvdcss
     state: present
 
 - name: Enable custom udev rule for superdrive
@@ -16,3 +16,4 @@
   ansible.builtin.copy:
     src: 99-superdrive.rules
     dest: /etc/udev/rules.d/99-superdrive.rules
+    mode: '0644'
