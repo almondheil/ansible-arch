@@ -1,5 +1,5 @@
 ---
-- name: Install no_cros_ec modprobe rule
+- name: Drop no_cros_ec modprobe rule
   become: true
   copy:
     src: no_cros_ec.conf

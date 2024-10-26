@@ -13,7 +13,7 @@
     cmd: chezmoi init --verbose almondheil
     creates: "{{ home }}/.local/share/chezmoi"
 
-- name: Copy chezmoi config
+- name: Drop chezmoi config
   copy:
     src: chezmoi.toml
     dest: "{{ home }}/.config/chezmoi/chezmoi.toml"

@@ -11,7 +11,7 @@
     groups: input
     append: yes
 
-- name: Install fprintd_grosshack pam unit
+- name: Install pam-fprintd-grosshack
   kewlfft.aur.aur:
     name: pam-fprint-grosshack
     state: present
