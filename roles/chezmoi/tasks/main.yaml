@@ -9,29 +9,29 @@
     state: present
 
 - name: Initialize chezmoi
-  command:
+  ansible.builtin.command:
     cmd: chezmoi init --verbose almondheil
     creates: "{{ home }}/.local/share/chezmoi"
 
 - name: Drop chezmoi config
-  copy:
+  ansible.builtin.copy:
     src: chezmoi.toml
     dest: "{{ home }}/.config/chezmoi/chezmoi.toml"
 
 - name: Decrypt chezmoi age key
   # requires pexpect python package to run
-  expect:
+  ansible.builtin.expect:
     command: age -d -o "{{ home }}/.config/chezmoi/key.txt" "{{ home }}/.local/share/chezmoi/key.txt.age"
     responses:
       "Enter passphrase:": "{{ chezmoi_passphrase }}"
     creates: "{{ home }}/.config/chezmoi/key.txt"
 
 - name: Set restricted permissions on chezmoi age key
-  file:
+  ansible.builtin.file:
     path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
 
 - name: Switch chezmoi remote to ssh
-  command:
+  ansible.builtin.command:
     cmd: git remote set-url origin git@github.com:almondheil/dotfiles.git
     chdir: "{{ home }}/.local/share/chezmoi"

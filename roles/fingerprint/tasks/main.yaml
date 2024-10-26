@@ -6,7 +6,7 @@
 
 - name: Add user to the input group
   become: true
-  user:
+  ansible.builtin.user:
     name: "{{ user }}"
     groups: input
     append: yes
@@ -18,6 +18,6 @@
 
 - name: Allow fprintd_grosshack authentication for sudo
   become: true
-  copy:
+  ansible.builtin.copy:
     src: sudo-pam-unit
     dest: /etc/pam.d/sudo

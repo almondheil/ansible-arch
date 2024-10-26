@@ -13,6 +13,6 @@
 
 - name: Enable custom udev rule for superdrive
   become: true
-  copy:
+  ansible.builtin.copy:
     src: 99-superdrive.rules
     dest: /etc/udev/rules.d/99-superdrive.rules

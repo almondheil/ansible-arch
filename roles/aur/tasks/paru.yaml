@@ -8,15 +8,17 @@
 - name: Set `aur_builder` rustup version to stable
   become: true
   become_user: aur_builder
-  command: rustup default stable
+  ansible.builtin.command:
+    cmd: rustup default stable
 
-- name: Set running user rustup version to stable
-  command: rustup default stable
+- name: Set user rustup version to stable
+  ansible.builtin.command:
+    cmd: rustup default stable
 
 - name: Install paru through the aur
+  become: true 
+  become_user: aur_builder
   kewlfft.aur.aur:
     name: paru
     state: present
     use: makepkg
-  become: true 
-  become_user: aur_builder

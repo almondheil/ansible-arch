@@ -7,13 +7,13 @@
 
 - name: Set user shell to zsh
   become: true
-  user:
+  ansible.builtin.user:
     name: "{{ user }}"
     shell: /bin/zsh
 
 # https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
 - name: Install oh-my-zsh from git
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/robbyrussell/oh-my-zsh"
     dest: "{{ home }}/.oh-my-zsh"
     version: master
@@ -21,7 +21,7 @@
 
 # https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
 - name: Set permissions on .oh-my-zsh directory
-  file:
+  ansible.builtin.file:
     path: "{{ home }}/.oh-my-zsh"
     owner: "{{ user }}"
     group: "{{ user }}"

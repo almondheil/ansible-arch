@@ -1,10 +1,10 @@
 ---
 - name: Install aseprite
-  import_tasks: aseprite.yaml
+  ansible.builtin.import_tasks: aseprite.yaml
 
 - name: Install gimp
-  import_tasks: gimp.yaml
+  ansible.builtin.import_tasks: gimp.yaml
 
 - name: Install inkscape
-  import_tasks: inkscape.yaml
+  ansible.builtin.import_tasks: inkscape.yaml
 

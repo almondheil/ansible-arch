@@ -3,5 +3,3 @@
   community.general.pacman:
     name: nextcloud-client
     state: present
-
-

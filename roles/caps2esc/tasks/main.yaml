@@ -12,13 +12,13 @@
 
 - name: Start and enable udevmon systemd service
   become: true
-  systemd:
-    name: udevmon.service
+  ansible.builtin.service:
+    name: udevmon
     state: started
     enabled: true
 
 - name: Drop caps2esc udevmon configuration
   become: true
-  copy:
+  ansible.builtin.copy:
     src: udevmon_job.yaml
     dest: /etc/interception/udevmon.d/caps2esc.yaml

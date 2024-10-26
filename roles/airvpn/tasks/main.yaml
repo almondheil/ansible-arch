@@ -13,7 +13,7 @@
 
 - name: Enable and start systemd-resolved service
   become: true
-  service:
+  ansible.builtin.service:
     name: systemd-resolved
     enabled: true
     state: started

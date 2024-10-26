@@ -6,11 +6,11 @@
     state: present
 
 - name: Initialize opam without updating .zshrc
-  command:
+  ansible.builtin.command:
     cmd: opam init --no-setup
     creates: "{{ home }}/.opam"
 
 - name: Install base ocaml development packages
-  command:
+  ansible.builtin.command:
     cmd: opam install --confirm-level=yes ocaml-lsp-server odoc ocamlformat utop
     creates: "{{ home }}/.opam/default/bin/utop"

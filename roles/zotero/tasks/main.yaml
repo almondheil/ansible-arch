@@ -4,4 +4,5 @@
     state: present
 
 - name: Override zotero flatpak to allow access to /opt
-  command: flatpak --user override --filesystem=/opt:ro org.zotero.Zotero
+  ansible.builtin.command:
+    cmd: flatpak --user override --filesystem=/opt:ro org.zotero.Zotero
