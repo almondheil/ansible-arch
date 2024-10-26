@@ -17,8 +17,8 @@
     mode: 0440
     validate: 'visudo -cf %s'
 
-- ansible.builtin.import_tasks: paru.yml
+- ansible.builtin.import_tasks: paru.yaml
   when: aur_helper == "paru"
 
-- ansible.builtin.import_tasks: yay.yml
+- ansible.builtin.import_tasks: yay.yaml
   when: aur_helper == "yay"

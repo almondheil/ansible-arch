@@ -24,8 +24,8 @@
     value: 'false'
 
 # these are all larger, so import them instead of just having them here
-- import_tasks: apps.yml
-- import_tasks: touchpad.yml
-- import_tasks: shortcuts.yml
-- import_tasks: alt_tab.yml
-- import_tasks: workspace_switching.yml
+- import_tasks: apps.yaml
+- import_tasks: touchpad.yaml
+- import_tasks: shortcuts.yaml
+- import_tasks: alt_tab.yaml
+- import_tasks: workspace_switching.yaml
