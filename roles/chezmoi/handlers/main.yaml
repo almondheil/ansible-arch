@@ -1,0 +1,4 @@
+- name: Set chezmoi remote to SSH
+  ansible.builtin.command:
+    cmd: git remote set-url origin git@github.com:almondheil/dotfiles.git
+    chdir: "{{ home }}/.local/share/chezmoi"

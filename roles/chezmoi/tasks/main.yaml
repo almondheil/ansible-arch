@@ -8,12 +8,13 @@
       - age
     state: present
 
-- name: Initialize chezmoi
+- name: Initialize chezmoi (github HTTPS)
   ansible.builtin.command:
-    cmd: chezmoi init --verbose almondheil
+    cmd: chezmoi init --ssh almondheil
     creates: "{{ home }}/.local/share/chezmoi"
+  notify: Set chezmoi remote to SSH
 
-- name: Drop chezmoi config
+- name: Drop filled-in chezmoi config
   ansible.builtin.copy:
     src: chezmoi.toml
     dest: "{{ home }}/.config/chezmoi/chezmoi.toml"
@@ -27,13 +28,7 @@
       "Enter passphrase:": "{{ chezmoi_passphrase }}"
     creates: "{{ home }}/.config/chezmoi/key.txt"
 
-- name: Set restricted permissions on chezmoi age key
+- name: Ensure restricted permissions on chezmoi age key
   ansible.builtin.file:
     path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
-
-- name: Drop chezmoi git config file to update remote
-  ansible.builtin.copy:
-    src: gitconfig
-    dest: "{{ home }}/.local/share/chezmoi/.git/config"
-    mode: '0644'
