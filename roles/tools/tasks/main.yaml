@@ -25,12 +25,6 @@
     name: ripgrep
     state: present
 
-- name: Install seahorse (password manager)
-  become: true
-  community.general.pacman:
-    name: seahorse
-    state: present
-
 - name: Install plocate
   become: true
   community.general.pacman:
