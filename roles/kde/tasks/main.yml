@@ -1,9 +1,11 @@
 - name: Ensure plasma metapackage is installed
+  become: true
   community.general.pacman:
     name: plasma-meta
     state: present
 
 - name: Install KDE utilities not included in plasma metapackage
+  become: true
   community.general.pacman:
     name:
       - ark
