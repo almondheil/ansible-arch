@@ -1,0 +1,14 @@
+- name: Ensure plasma metapackage is installed
+  community.general.pacman:
+    name: plasma-meta
+    state: present
+
+- name: Install KDE utilities not included in plasma metapackage
+  community.general.pacman:
+    name:
+      - ark
+      - kgpg
+      - kwalletmanager
+      - spectacle
+      - yakuake
+    state: present
