@@ -10,7 +10,7 @@
 
 - name: Initialize chezmoi (github HTTPS)
   ansible.builtin.command:
-    cmd: chezmoi init --ssh almondheil
+    cmd: chezmoi init almondheil
     creates: "{{ home }}/.local/share/chezmoi"
   notify: Set chezmoi remote to SSH
 
