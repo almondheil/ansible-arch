@@ -1,3 +1,2 @@
 user: "almond"
 home: "/home/{{ user }}"
-lvim_release: "release-1.4/neovim-0.9"
