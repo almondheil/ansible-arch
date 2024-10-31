@@ -13,5 +13,7 @@
 
 - name: Build aseprite from aur
   kewlfft.aur.aur:
-    name: aseprite
+    name:
+      - aseprite
+      - aseprite-debug
     state: present

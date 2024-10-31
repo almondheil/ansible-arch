@@ -12,5 +12,7 @@
 
 - name: Install birdtray through AUR
   kewlfft.aur.aur:
-    name: birdtray
+    name:
+      - birdtray
+      - birdtray-debug
     state: present
