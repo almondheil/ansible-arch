@@ -1,0 +1,13 @@
+---
+- name: Install vulkan for Intel integrated graphics
+  become: true
+  community.general.pacman:
+    update_cache: true # update_cache is needed because both of these come from the multilib repo we just enabled
+    name: lib32-vulkan-intel
+    state: present
+
+- name: Install steam
+  become: true
+  community.general.pacman:
+    name: steam
+    state: present
