@@ -1,0 +1,6 @@
+---
+- name: Install fwupd
+  become: true
+  community.general.pacman:
+    name: fwupd
+    state: present

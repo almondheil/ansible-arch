@@ -24,6 +24,7 @@
     - { role: firefox, tags: ['firefox'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: framework, tags: ['framework'] }
+    - { role: fwupd, tags: ['fwupd'] }
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
