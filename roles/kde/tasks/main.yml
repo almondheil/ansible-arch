@@ -12,5 +12,4 @@
       - kgpg
       - kwalletmanager
       - spectacle
-      - yakuake
     state: present
