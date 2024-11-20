@@ -1,15 +1,14 @@
-Dependencies are:
+To run this stuff, you need a functioning system where you can connect to the network and log in as a user and run `sudo` commands.
 
-Install these packages (on arch):
+Install bare-bones system packages first, then install the non-base ansible modules needed.
 
 ```
 sudo pacman -Syu ansible python-pexpect
-```
-
-Then, install the ansible collections you need:
-
-```
 ansible-galaxy collection install -r requirements.yml
 ```
 
-Then, you can run `runme.sh` in this repo and it should work out.
+Once those are installed, you can just run it. If you pass any arguments, they'll get passed straight to `ansible-playbook`.
+
+```
+./runme.sh
+```
