@@ -12,7 +12,7 @@
     shell: /bin/zsh
 
 # https://github.com/aturnr/ansible-role-ohmyzsh/blob/master/tasks/install.yml
-- name: Install oh-my-zsh from git
+- name: Clone oh-my-zsh from git
   ansible.builtin.git:
     repo: "https://github.com/robbyrussell/oh-my-zsh"
     dest: "{{ home }}/.oh-my-zsh"
@@ -26,3 +26,9 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: '0750'
+
+- name: Clone base16-shell from git
+  ansible.builtin.git:
+    repo: "https://github.com/chriskempson/base16-shell"
+    dest: "{{ home }}/.base16-shell"
+    version: master
