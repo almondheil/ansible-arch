@@ -1,0 +1,7 @@
+---
+- name: Load virtualbox kernel modules
+  become: true
+  community.general.modprobe:
+    name: '{{ item }}'
+    state: present
+  with_lines: cat /usr/lib/modules-load.d/virtualbox-host-modules-arch.conf

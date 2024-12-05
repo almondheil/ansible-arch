@@ -35,5 +35,6 @@
     - { role: superdrive, tags: ['superdrive'] }
     - { role: tailscale, tags: ['tailscale'] }
     - { role: tools, tags: ['tools'] }
+    - { role: virtualbox, tags: ['virtualbox'] }
     - { role: zotero, tags: ['zotero'] }
     - { role: zsh, tags: ['zsh'] }
