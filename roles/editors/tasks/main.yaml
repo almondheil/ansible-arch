@@ -10,16 +10,3 @@
   community.general.pacman:
     name: okular
     state: present
-
-- name: Install QOwnNotes dependencies
-  become: true
-  community.general.pacman:
-    name:
-      - qt5-websockets
-      - aspell
-    state: present
-
-- name: Install QOwnNotes (notes editor)
-  kewlfft.aur.aur:
-    name: qownnotes
-    state: present
