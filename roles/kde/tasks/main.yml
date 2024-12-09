@@ -12,4 +12,5 @@
       - kgpg
       - kwalletmanager
       - spectacle
+      - partitionmanager
     state: present
