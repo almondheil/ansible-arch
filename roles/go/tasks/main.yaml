@@ -6,7 +6,7 @@
     state: present
 
 - name: Install personal gonote script
-  ansible.builtin.shell:
+  ansible.builtin.command:
     cmd: go install github.com/almondheil/gonote@latest
     creates: "{{ home }}/.go/gonote"
   environment:
