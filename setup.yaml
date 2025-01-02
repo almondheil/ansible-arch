@@ -25,11 +25,11 @@
     - { role: fonts, tags: ['fonts'] }
     - { role: framework, tags: ['framework'] }
     - { role: fwupd, tags: ['fwupd'] }
+    - { role: go, tags: ['go'] }
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
     - { role: nextcloud, tags: ['nextcloud'] }
-    - { role: opam, tags: ['opam', 'ocaml'] }
     - { role: snapper, tags: ['snapper'] }
     - { role: steam, tags: ['steam'] }
     - { role: superdrive, tags: ['superdrive'] }
