@@ -27,6 +27,7 @@
     - { role: fwupd, tags: ['fwupd'] }
     - { role: git, tags: ['git'] }
     - { role: go, tags: ['go'] }
+    - { role: home, tags: ['home'] }
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }

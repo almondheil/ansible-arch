@@ -1,15 +1,31 @@
 user: "almond"
 home: "/home/{{ user }}"
 
+# git projects to clone into ~/git
 git_projects:
   - name: almondheil.github.io
     url:  git@github.com:almondheil/almondheil.github.io.git
   - name: resume
     url:  git@github.com:almondheil/resume.git
 
+# symlinks out of nextcloud to elsewhere
 nextcloud: "{{ home }}/nextcloud"
 nextcloud_symlinks:
   - src:  "{{ nextcloud }}/TODO.txt"
     dest: "{{ home }}/TODO.txt"
   - src:  "{{ nextcloud }}/todotxt"
     dest: "{{ home }}/.todo"
+
+# what directories should be removed from home, and what should be added?
+home_subdir_remove:
+  - Desktop
+  - Documents
+  - Downloads
+  - Music
+  - Pictures
+  - Public
+  - Templates
+  - Videos
+home_subdir_create:
+  - download
+  - virtualbox
