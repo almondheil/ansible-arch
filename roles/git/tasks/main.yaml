@@ -9,5 +9,6 @@
   ansible.builtin.git:
     repo: "{{ item.url }}"
     dest: "{{ home }}/git/{{ item.name }}"
-    update: no
+    update: false
+    accept_newhostkey: true
   with_items: "{{ git_projects }}"
