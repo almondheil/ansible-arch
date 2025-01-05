@@ -28,4 +28,5 @@ home_subdir_remove:
   - Videos
 home_subdir_create:
   - download
+  - truenas-media
   - virtualbox
