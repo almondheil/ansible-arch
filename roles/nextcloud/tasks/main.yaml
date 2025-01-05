@@ -3,3 +3,14 @@
   community.general.pacman:
     name: nextcloud-client
     state: present
+
+- name: Create symlinks for nextcloud items (once they sync)
+  ansible.builtin.file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: true # ignore if src does not exist
+    follow: false # avoid ambiguity about following symlinks
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  with_items: "{{ nextcloud_symlinks }}"

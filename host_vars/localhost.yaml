@@ -1,7 +1,15 @@
 user: "almond"
 home: "/home/{{ user }}"
+
 git_projects:
   - name: almondheil.github.io
-    url: git@github.com:almondheil/almondheil.github.io.git
+    url:  git@github.com:almondheil/almondheil.github.io.git
   - name: resume
-    url: git@github.com:almondheil/resume.git
+    url:  git@github.com:almondheil/resume.git
+
+nextcloud: "{{ home }}/nextcloud"
+nextcloud_symlinks:
+  - src:  "{{ nextcloud }}/TODO.txt"
+    dest: "{{ home }}/TODO.txt"
+  - src:  "{{ nextcloud }}/todotxt"
+    dest: "{{ home }}/.todo"
