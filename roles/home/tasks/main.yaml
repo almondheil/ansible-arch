@@ -9,4 +9,5 @@
   ansible.builtin.file:
     path: "{{ home }}/{{ item }}"
     state: directory
+    mode: '0700'
   with_items: "{{ home_subdir_create }}"
