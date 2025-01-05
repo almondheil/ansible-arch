@@ -1,0 +1,8 @@
+[Unit]
+Description="Move steam screenshots into Nextcloud"
+ConditionPathIsDirectory={{ home }}/.local/Steam/userdata
+ConditionPathIsDirectory={{ nextcloud }}/Pictures/Steam
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /usr/bin/steam-move-screenshots.sh
