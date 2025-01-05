@@ -25,6 +25,7 @@
     - { role: fonts, tags: ['fonts'] }
     - { role: framework, tags: ['framework'] }
     - { role: fwupd, tags: ['fwupd'] }
+    - { role: git, tags: ['git'] }
     - { role: go, tags: ['go'] }
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }

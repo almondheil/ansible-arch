@@ -1,2 +1,7 @@
 user: "almond"
 home: "/home/{{ user }}"
+git_projects:
+  - name: almondheil.github.io
+    url: git@github.com:almondheil/almondheil.github.io.git
+  - name: resume
+    url: git@github.com:almondheil/resume.git

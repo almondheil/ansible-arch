@@ -1,0 +1,13 @@
+---
+- name: Create git directory
+  ansible.builtin.file:
+    path: "{{ home }}/git"
+    state: directory
+    mode: 0700
+
+- name: Make sure git projects are cloned
+  ansible.builtin.git:
+    repo: "{{ item.url }}"
+    dest: "{{ home }}/git/{{ item.name }}"
+    update: no
+  with_items: "{{ git_projects }}"
