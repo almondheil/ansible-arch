@@ -10,7 +10,7 @@
     - { role: flatpak, tags: ['flatpak'] }
 
     # install chezmoi and get it started
-    # (user will still need to apply changes)
+    # (user will still need to apply changes, except for ~/.ssh)
     - { role: chezmoi, tags: ['chezmoi'] }
 
     # everything else

@@ -21,7 +21,6 @@
     mode: '0600'
 
 - name: Decrypt chezmoi age key
-  # requires pexpect python package to run
   ansible.builtin.expect:
     command: age -d -o "{{ home }}/.config/chezmoi/key.txt" "{{ home }}/.local/share/chezmoi/key.txt.age"
     responses:
@@ -32,3 +31,8 @@
   ansible.builtin.file:
     path: "{{ home }}/.config/chezmoi/key.txt"
     mode: '0600'
+
+- name: Install ssh keys
+  ansible.builtin.command:
+    cmd: "chezmoi apply --force {{ home }}/.ssh"
+    creates: "{{ home }}/.ssh/id_ed25519"
