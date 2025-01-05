@@ -41,28 +41,22 @@
     cmd: snapper -c root create-config /
     creates: /etc/snapper/configs/root
 
-- name: Create snapper config home over /home
-  become: true
-  ansible.builtin.command:
-    cmd: snapper -c home create-config /home
-    creates: /etc/snapper/configs/home
-
-- name: Drop snapper config files
+- name: Drop snapper root config file
   become: true
   ansible.builtin.template:
-    src: "{{ item }}.j2"
-    dest: /etc/snapper/configs/{{ item }}
+    src: root.j2
+    dest: /etc/snapper/configs/root
     mode: '0640'
-  loop:
-    - home
-    - root
 
-- name: Enable snapper-timeline systemd timer
+- name: Enable snapper creation and cleanup timers
   become: true
   ansible.builtin.service:
-    name: snapper-timeline.timer
+    name: "{{ item }}.timer"
     state: started
     enabled: true
+  with_items:
+    - snapper-timeline
+    - snapper-cleanup
 
 - name: Install snap-pac for snapshots on package changes
   become: true
