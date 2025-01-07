@@ -72,6 +72,6 @@
     state: present
 
 - name: Install ftag
-  command:
-    cmd: cargo install ftag
-    creates: "{{ home }}/.cargo/bin/ftag"
+  community.general.cargo:
+    name: ftag
+    state: present

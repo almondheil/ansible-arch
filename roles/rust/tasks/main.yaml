@@ -5,7 +5,7 @@
     name: rustup
     state: present
 
-- name: Set default rustup toolchain to stable
-  command:
+- name: Set user default rustup toolchain to stable
+  ansible.builtin.command:
     cmd: rustup default stable
     creates: "{{ home }}/.rustup/toolchains"
