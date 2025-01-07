@@ -8,6 +8,7 @@
     # install aur and flatpak to make sure they are available for future roles
     - { role: aur, tags: ['aur'] }
     - { role: flatpak, tags: ['flatpak'] }
+    - { role: rust, tags: ['rust', 'cargo'] }
 
     # install chezmoi and get it started
     # (user will still need to apply changes, except for ~/.ssh)

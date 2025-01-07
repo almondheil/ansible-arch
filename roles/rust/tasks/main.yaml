@@ -1,0 +1,11 @@
+---
+- name: Install rustup
+  become: true
+  community.general.pacman:
+    name: rustup
+    state: present
+
+- name: Set default rustup toolchain to stable
+  command:
+    cmd: rustup default stable
+    creates: "{{ home }}/.rustup/toolchains"
