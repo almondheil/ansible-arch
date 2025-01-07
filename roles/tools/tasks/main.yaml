@@ -70,3 +70,8 @@
   community.general.pacman:
     name: wl-clipboard
     state: present
+
+- name: Install ftag
+  command:
+    cmd: cargo install ftag
+    creates: "{{ home }}/.cargo/bin/ftag"
