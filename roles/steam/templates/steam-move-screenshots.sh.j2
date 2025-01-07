@@ -1,7 +1,4 @@
 USERDATA="{{ home }}/.local/share/Steam/userdata"
 STEAM_SCREENSHOTS="{{ nextcloud }}/Pictures/Steam"
 
-find $USERDATA -name '*.jpg' -not -path '*thumbnail*' -print0 |
-	while IFS= read -r -d '' line; do
-            mv "$line" "$STEAM_SCREENSHOTS"
-        done
+find $USERDATA -name '*.jpg' -not -path '*thumbnail*' -exec mv {} "$STEAM_SCREENSHOTS" \;
