@@ -17,6 +17,7 @@
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
+    mode: "700"
 
 - name: Create symlinks for syncthing items (once they sync)
   ansible.builtin.file:
