@@ -1,7 +1,7 @@
 [Unit]
-Description="Move steam screenshots into Nextcloud"
+Description="Move steam screenshots into Pictures dir"
 ConditionPathIsDirectory={{ home }}/.local/share/Steam/userdata
-ConditionPathIsDirectory={{ nextcloud }}/Pictures/Steam
+ConditionPathIsDirectory={{ home }}/sync/Pictures/Steam
 
 [Service]
 Type=oneshot

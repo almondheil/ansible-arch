@@ -8,13 +8,12 @@ git_projects:
   - name: resume
     url: git@github.com:almondheil/resume.git
 
-# symlinks out of nextcloud to elsewhere
-nextcloud: "{{ home }}/nextcloud"
-nextcloud_symlinks:
-  - src: "{{ nextcloud }}/TODO.txt"
-    dest: "{{ home }}/TODO.txt"
-  - src: "{{ nextcloud }}/todotxt"
-    dest: "{{ home }}/.todo"
+sync_dir: "{{ home }}/sync"
+sync_symlinks:
+   - src: "{{ sync_dir }}/TODO.txt"
+     dest: "{{ home }}/TODO.txt"
+   - src: "{{ sync_dir }}/todotxt"
+     dest: "{{ home }}/.todo"
 
 # what directories should be removed from home, and what should be added?
 home_subdir_remove:
@@ -28,5 +27,6 @@ home_subdir_remove:
   - Videos
 home_subdir_create:
   - download
+  - sync
   - truenas-media
   - virtualbox

@@ -32,10 +32,10 @@
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
-    - { role: nextcloud, tags: ['nextcloud'] }
     - { role: snapper, tags: ['snapper'] }
     - { role: steam, tags: ['steam'] }
     - { role: superdrive, tags: ['superdrive'] }
+    - { role: syncthing, tags: ['syncthing'] }
     - { role: tailscale, tags: ['tailscale'] }
     - { role: tools, tags: ['tools'] }
     - { role: virtualbox, tags: ['virtualbox'] }
