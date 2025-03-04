@@ -7,12 +7,16 @@ git_projects:
     url: git@github.com:almondheil/almondheil.github.io.git
   - name: resume
     url: git@github.com:almondheil/resume.git
+  - name: ftag
+    url: git@github.com:almondheil/ftag.git
+  - name: gonote
+    url: git@github.com:almondheil/gonote.git
 
 sync_dir: "{{ home }}/sync"
 sync_symlinks:
-  - src: "{{ sync_dir }}/TODO.txt"
-    dest: "{{ home }}/TODO.txt"
-  - src: "{{ sync_dir }}/todotxt"
+  - src: "{{ sync_dir }}/TODO.md"
+    dest: "{{ home }}/TODO.md"
+  - src: "{{ sync_dir }}/dot_todo"
     dest: "{{ home }}/.todo"
 
 # what directories should be removed from home, and what should be added?
