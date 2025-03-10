@@ -12,11 +12,12 @@ git_projects:
   - name: gonote
     url: git@github.com:almondheil/gonote.git
 
+# syncthing directory and symlinks to be made out of it, into other locations
 sync_dir: "{{ home }}/sync"
 sync_symlinks:
-  - src: "{{ sync_dir }}/TODO.md"
+  - src: "TODO.md"
     dest: "{{ home }}/TODO.md"
-  - src: "{{ sync_dir }}/dot_todo"
+  - src: "dot_todo"
     dest: "{{ home }}/.todo"
 
 # what directories should be removed from home, and what should be added?
