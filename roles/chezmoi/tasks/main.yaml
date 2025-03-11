@@ -12,7 +12,8 @@
   ansible.builtin.command:
     cmd: chezmoi init almondheil
     creates: "{{ home }}/.local/share/chezmoi"
-  notify: Set chezmoi remote to SSH
+  notify:
+    - Set chezmoi remote to SSH
 
 - name: Drop filled-in chezmoi config
   ansible.builtin.copy:

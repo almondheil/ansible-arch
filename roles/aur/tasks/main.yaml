@@ -13,7 +13,8 @@
     group: wheel
   # don't run if yay already exists; clean up after tasks run
   when: not yay_stat.stat.exists
-  notify: Delete `aur_builder` user
+  notify:
+    - Delete `aur_builder` user
 
 # modified from https://github.com/kewlfft/ansible-aur
 - name: Allow the `aur_builder` user to run `sudo pacman` without a password
@@ -25,7 +26,8 @@
     validate: "visudo -cf %s"
   # don't run if yay already exists; clean up after tasks run
   when: not yay_stat.stat.exists
-  notify: Remove `aur_builder` sudo rule
+  notify:
+    - Remove `aur_builder` sudo rule
 
 - name: Install yay through the aur
   become: true

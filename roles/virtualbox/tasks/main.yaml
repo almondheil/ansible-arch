@@ -7,7 +7,8 @@
       # assuming we're using the `linux` kernel, this is the correct host modules
       - virtualbox-host-modules-arch
     state: present
-  notify: Load virtualbox kernel modules
+  notify:
+    - Load virtualbox kernel modules
 
 - name: Add user to vboxusers group for VM USB access
   become: true
