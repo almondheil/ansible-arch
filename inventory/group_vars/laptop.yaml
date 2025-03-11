@@ -1,3 +1,7 @@
+# do not warn that ansible could change the version of python running
+ansible_python_interpreter: auto_silent
+
+# set user home
 user: "almond"
 home: "/home/{{ user }}"
 
