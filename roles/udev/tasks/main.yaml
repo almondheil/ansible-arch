@@ -1,0 +1,14 @@
+---
+- name: Drop superdrive enable-on-plugin rule
+  become: true
+  ansible.builtin.copy:
+    src: 99-superdrive.rules
+    dest: /etc/udev/rules.d/99-superdrive.rules
+    mode: '0644'
+
+- name: Drop android device enable-on-plugin rule(s)
+  become: true
+  ansible.builtin.copy:
+    src: 51-android.rules
+    dest: /etc/udev/rules.d/51-android.rules
+    mode: '0644'
