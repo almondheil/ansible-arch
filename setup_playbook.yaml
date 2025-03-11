@@ -6,9 +6,10 @@
       prompt: Chezmoi encrpyion passphrase
   roles:
     # install aur and flatpak to make sure they are available for future roles
-    - { role: aur, tags: ['aur'] }
+    # before anything else, take care of anything that gives a package manager we'll need to use
     - { role: flatpak, tags: ['flatpak'] }
     - { role: rust, tags: ['rust', 'cargo'] }
+    - { role: yay, tags: ['aur', 'yay'] }
 
     # install chezmoi and get it started
     # (user will still need to apply changes, except for ~/.ssh)
