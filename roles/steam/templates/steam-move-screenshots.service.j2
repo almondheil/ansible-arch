@@ -1,7 +1,7 @@
 [Unit]
 Description="Move steam screenshots into Pictures dir"
 ConditionPathIsDirectory={{ home }}/.local/share/Steam/userdata
-ConditionPathIsDirectory={{ home }}/sync/Pictures/Steam
+ConditionPathIsDirectory={{ sync_dir }}/Pictures/Steam
 
 [Service]
 Type=oneshot
