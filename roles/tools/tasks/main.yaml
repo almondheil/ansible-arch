@@ -94,4 +94,3 @@
   community.general.pacman:
     name: libdvdcss
     state: present
-
