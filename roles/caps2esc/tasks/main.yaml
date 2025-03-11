@@ -20,6 +20,6 @@
 - name: Drop caps2esc udevmon configuration
   become: true
   ansible.builtin.copy:
-    src: udevmon_job.yaml
+    src: caps2esc_udevmon.yaml
     dest: /etc/interception/udevmon.d/caps2esc.yaml
     mode: "0644"
