@@ -71,7 +71,14 @@
     name: wl-clipboard
     state: present
 
-- name: Install ftag
+- name: Install latest ftag
   community.general.cargo:
     name: ftag
-    state: present
+    state: latest
+
+- name: Install latest gonote
+  ansible.builtin.command:
+    cmd: go install github.com/almondheil/gonote@latest
+    creates: "{{ home }}/.go/bin/gonote"
+  environment:
+    GOPATH: "{{ home }}/.go"
