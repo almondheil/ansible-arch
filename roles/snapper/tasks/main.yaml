@@ -35,27 +35,24 @@
     name: snapper
     state: present
 
-- name: Create snapper config root over /
+- name: Tell snapper to monitor locations
   become: true
   ansible.builtin.command:
-    cmd: snapper -c root create-config /
-    creates: /etc/snapper/configs/root
+    cmd: 'snapper -c {{ item.name }} create-config {{ item.loc }}'
+    creates: '/etc/snapper/configs/{{ item.name }}'
+  with_items:
+    - { name: 'home', loc: '/home' }
+    - { name: 'root', loc: '/' }
 
-- name: Create snapper config home over /home
-  become: true
-  ansible.builtin.command:
-    cmd: snapper -c home create-config /home
-    creates: /etc/snapper/configs/home
-
-- name: Drop snapper config files
+- name: Drop actual snapper config files
   become: true
   ansible.builtin.template:
     src: "{{ item }}.j2"
     dest: /etc/snapper/configs/{{ item }}
     mode: '0640'
-  loop:
-    - home
-    - root
+  with_items:
+    - 'home'
+    - 'root'
 
 - name: Enable snapper-timeline systemd timer
   become: true
