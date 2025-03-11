@@ -5,9 +5,9 @@
     - name: chezmoi_passphrase
       prompt: Chezmoi encrpyion passphrase
   roles:
-    # install aur and flatpak to make sure they are available for future roles
     # before anything else, take care of anything that gives a package manager we'll need to use
     - { role: flatpak, tags: ['flatpak'] }
+    - { role: go, tags: ['go'] }
     - { role: rust, tags: ['rust', 'cargo'] }
     - { role: yay, tags: ['aur', 'yay'] }
 
@@ -28,7 +28,6 @@
     - { role: framework, tags: ['framework'] }
     - { role: fwupd, tags: ['fwupd'] }
     - { role: git, tags: ['git'] }
-    - { role: go, tags: ['go'] }
     - { role: home, tags: ['home'] }
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
