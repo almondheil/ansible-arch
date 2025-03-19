@@ -1,0 +1,26 @@
+---
+- name: Install figlet
+  become: true
+  community.general.pacman:
+    name: figlet
+    state: present
+
+- name: Drop custom figlet fonts (originally from https://github.com/xero/figlet-fonts/tree/master)
+  become: true
+  ansible.builtin.copy:
+    src: '{{ item }}'
+    dest: '/usr/share/figlet/fonts/{{ item }}'
+    mode: '0644'
+  with_items:
+    - alpha.flf
+    - chunky.flf
+    - cosmic.flf
+    - crazy.flf
+    - ghost.flf
+    - linux.flf
+    - pebbles.flf
+    - poison.flf
+    - puffy.flf
+    - shimrod.flf
+    - starwars.flf
+    - tubes-regular.flf

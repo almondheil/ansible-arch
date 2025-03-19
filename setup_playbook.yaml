@@ -22,6 +22,7 @@
     - { role: caps2esc, tags: ['caps2esc'] }
     - { role: chat_apps, tags: ['chat_apps'] }
     - { role: editors, tags: ['editors'] }
+    - { role: figlet, tags: ['figlet'] }
     - { role: fingerprint, tags: ['fingerprint'] }
     - { role: firefox, tags: ['firefox'] }
     - { role: fonts, tags: ['fonts'] }
