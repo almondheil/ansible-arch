@@ -19,12 +19,12 @@
     - { role: airvpn, tags: ['airvpn'] }
     - { role: art_apps, tags: ['art_apps'] }
     - { role: bluetooth, tags: ['bluetooth'] }
+    - { role: browser, tags: ['browser'] }
     - { role: caps2esc, tags: ['caps2esc'] }
     - { role: chat_apps, tags: ['chat_apps'] }
     - { role: editors, tags: ['editors'] }
     - { role: figlet, tags: ['figlet'] }
     - { role: fingerprint, tags: ['fingerprint'] }
-    - { role: firefox, tags: ['firefox'] }
     - { role: fonts, tags: ['fonts'] }
     - { role: framework, tags: ['framework'] }
     - { role: fwupd, tags: ['fwupd'] }
