@@ -3,11 +3,11 @@
   ansible.builtin.file:
     path: "{{ home }}/{{ item }}"
     state: absent
-  with_items: "{{ home_subdir_remove }}"
+  with_items: "{{ home_subdirs.remove }}"
 
 - name: Create preferred home subdirectories
   ansible.builtin.file:
     path: "{{ home }}/{{ item }}"
     state: directory
     mode: '0700'
-  with_items: "{{ home_subdir_create }}"
+  with_items: "{{ home_subdirs.create }}"

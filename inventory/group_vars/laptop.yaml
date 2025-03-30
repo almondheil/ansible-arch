@@ -25,20 +25,21 @@ sync_symlinks:
     dest: "{{ home }}/.todo"
 
 # what directories should be removed from home, and what should be added?
-home_subdir_remove:
-  - Desktop
-  - Documents
-  - Downloads
-  - Music
-  - Pictures
-  - Public
-  - Templates
-  - Videos
-home_subdir_create:
-  - download
-  - sync
-  - truenas-media
-  - virtualbox
+home_subdirs:
+  remove:
+    - Desktop
+    - Documents
+    - Downloads
+    - Music
+    - Pictures
+    - Public
+    - Templates
+    - Videos
+  create:
+    - download
+    - sync
+    - truenas-media
+    - virtualbox
 
 # things to install for use with the WM
 # note: pacman tools get installed before aur, so dependencies can be listed
