@@ -1,0 +1,28 @@
+---
+- name: Install niri
+  become: true
+  community.general.pacman:
+    name: niri
+    state: present
+
+- name: Install niri tools (pacman)
+  become: true
+  community.general.pacman:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ niri_tools.pacman }}'
+
+- name: Install niri tools (aur)
+  kewlfft.aur.aur:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ niri_tools.aur }}'
+
+- name: Install GDM
+  become: true
+  community.general.pacman:
+    name: gdm
+    state: present
+  notify:
+    - Enable GDM
+

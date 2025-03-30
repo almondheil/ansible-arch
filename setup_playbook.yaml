@@ -33,6 +33,7 @@
     - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
+    - { role: niri, tags: ['niri'] }
     - { role: snapper, tags: ['snapper'] }
     - { role: steam, tags: ['steam'] }
     - { role: syncthing, tags: ['syncthing'] }

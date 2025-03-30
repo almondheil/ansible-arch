@@ -39,3 +39,21 @@ home_subdir_create:
   - sync
   - truenas-media
   - virtualbox
+
+# things to install for use with the WM
+# note: pacman tools get installed before aur, so dependencies can be listed
+niri_tools:
+  pacman:
+    - brightnessctl             # screen brightness control
+    - fuzzel                    # app launcher
+    - gnome-keyring             # gnome's keyring for passwords
+    - mako                      # notifications
+    - org.freedesktop.secrets   # secrets portal
+    - polkit-kde-agent          # plasma's polkit agent
+    - swaybg                    # walpapers
+    - swaylock                  # screen lock
+    - xdg-desktop-portal-gnome  # niri screenscasting
+    - xwayland-satellite        # run x11 apps in xwayland
+  aur:
+    - clipman                   # clipboard management
+    - hyprpicker                # color picker
