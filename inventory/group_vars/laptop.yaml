@@ -53,6 +53,7 @@ niri_tools:
     - polkit-kde-agent          # plasma's polkit agent
     - swaybg                    # walpapers
     - swaylock                  # screen lock
+    - systemsettings            # kde system settings app, good
     - xdg-desktop-portal-gnome  # niri screenscasting
     - xwayland-satellite        # run x11 apps in xwayland
   aur:
