@@ -4,3 +4,9 @@
   community.general.pacman:
     name: texlive
     state: present
+
+- name: Install biber
+  become: true
+  community.general.pacman:
+    name: biber
+    state: present
