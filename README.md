@@ -4,7 +4,12 @@ These are the dependencies you need to explicitly install--just so ansible can r
 
 ```
 sudo pacman -Syu ansible python-pexpect
-ansible-galaxy collection install -r requirements.yml
+ansible-galaxy collection install -r galaxy.yaml
 ```
 
-Then, just run `./runme.sh`. You'll be prompted for your sudo password, as well as the Chezmoi encryption passphrase.
+To run:
+
+```
+./run.sh
+```
+

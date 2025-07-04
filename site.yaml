@@ -30,7 +30,6 @@
     - { role: fwupd, tags: ['fwupd'] }
     - { role: git, tags: ['git'] }
     - { role: home, tags: ['home'] }
-    - { role: kde, tags: ['kde'] }
     - { role: latex, tags: ['latex'] }
     - { role: mail, tags: ['mail'] }
     - { role: niri, tags: ['niri'] }
