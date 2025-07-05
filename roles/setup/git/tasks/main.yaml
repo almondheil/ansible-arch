@@ -1,4 +1,10 @@
 ---
+- name: Install git
+  become: true
+  ansible.builtin.package:
+    name: git
+    state: present
+
 - name: Create git directory
   ansible.builtin.file:
     path: "{{ home }}/git"

@@ -1,0 +1,6 @@
+# set some overall ansible options
+ansible_connection: 'local'
+ansible_python_interpreter: 'auto_silent'
+
+user: 'almond'
+home: '/home/{{ user }}'

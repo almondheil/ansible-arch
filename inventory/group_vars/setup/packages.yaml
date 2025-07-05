@@ -1,0 +1,107 @@
+packages:
+  install:
+    system:
+      - '{{ package_groups.art.system }}'
+      - '{{ package_groups.caps2esc.system }}'
+      - '{{ package_groups.chezmoi.system }}'
+      - '{{ package_groups.niri.system }}'
+      - '{{ package_groups.programming.system }}'
+      - bash
+      - biber
+      - cmatrix
+      - cowsay
+      - fortune-mod
+      - fprintd
+      - fwupd
+      - fzf
+      - gimp
+      - gwenview
+      - inkscape
+      - kitty
+      - libdvdcss
+      - lolcat
+      - man-db
+      - net-tools
+      - okular
+      - plocate
+      - power-profiles-daemon
+      - ripgrep
+      - sg3_utils
+      - syncthing
+      - systemd-resolvconf
+      - tailscale
+      - texlive
+      - thunderbird
+      - trash-cli
+      - tree
+      - wireguard-tools
+      - wl-clipboard
+    flatpak:
+      - '{{ package_groups.art.flatpak }}'
+      - com.discordapp.Discord
+      - io.github.ungoogled_software.ungoogled_chromium
+      - org.mozilla.firefox
+      - org.signal.Signal
+      - org.zotero.Zotero
+    aur:
+      - '{{ package_groups.art.aur}}'
+      - '{{ package_groups.chezmoi.aur }}'
+      - '{{ package_groups.niri.aur}}'
+      - pam-fprint-grosshack
+      - todotxt
+  remove: 
+    system:
+      - firefox
+
+package_groups:
+  art:
+    system:
+      # (aseprite dependencies)
+      - clang
+      - cmark
+      - compiler-rt
+      - fmt
+      - gn
+      - tinyxml2
+    flatpak:
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
+    aur:
+      - aseprite
+  caps2esc:
+    system:
+      - interception-tools
+      - interception-caps2esc
+  chezmoi:
+    system:
+      - chezmoi
+      - age
+    aur:
+      - chezmoi_modify_manager
+  fonts:
+    system:
+      - ttf-inconsolata-nerd
+      - noto-fonts
+      - noto-fonts-emoji
+      - noto-fonts-cjk
+  niri:
+    system:
+      - niri
+      - brightnessctl
+      - fuzzel
+      - gnome-keyring
+      - mako
+      - org.freedesktop.secrets
+      - polkit-kde-agent
+      - swaybg
+      - swaylock
+      - systemsettings
+      - xdg-desktop-portal-gnome
+      - xwayland-satellite
+    aur:
+      - clipman
+      - hyprpicker
+  programming:
+    system:
+      - go
+      - rustup

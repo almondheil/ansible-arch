@@ -1,0 +1,41 @@
+---
+- name: Check if yay is already installed
+  ansible.builtin.stat:
+    path: /usr/bin/yay
+  register: yay_stat
+
+# modified from https://github.com/kewlfft/ansible-aur
+- name: Create the `aur_builder` user
+  become: true
+  ansible.builtin.user:
+    name: aur_builder
+    create_home: true
+    group: wheel
+  # don't run if yay already exists; clean up after tasks run
+  when: not yay_stat.stat.exists
+  notify:
+    - Delete `aur_builder` user
+
+# modified from https://github.com/kewlfft/ansible-aur
+- name: Allow the `aur_builder` user to run `sudo pacman` without a password
+  become: true
+  ansible.builtin.copy:
+    src: 11-install-aur_builder
+    dest: /etc/sudoers.d/11-install-aur_builder
+    mode: "0400"
+    validate: "visudo -cf %s"
+  # don't run if yay already exists; clean up after tasks run
+  when: not yay_stat.stat.exists
+  notify:
+    - Remove `aur_builder` sudo rule
+
+- name: Install yay through the aur
+  become: true
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: yay
+    state: present
+    use: makepkg
+  # don't even TRY to run if yay already exists,
+  # since aur_builder user won't exist and ansible will crash
+  when: not yay_stat.stat.exists

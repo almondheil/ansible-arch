@@ -1,0 +1,49 @@
+---
+- name: Debug package install and remove settings
+  ansible.builtin.debug:
+    var: packages
+  tags: [never, debug]
+
+- name: System install
+  become: true
+  ansible.builtin.package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - '{{ packages.install.system | default([]) }}'
+
+- name: System remove
+  become: true
+  ansible.builtin.package:
+    name: '{{ item }}'
+    state: absent
+  with_items:
+    - '{{ packages.remove.system | default([]) }}'
+
+- name: Flatpak install
+  community.general.flatpak:
+    name: '{{ item }}'
+    state: present 
+  with_items:
+    - '{{ packages.install.flatpak | default([]) }}'
+
+- name: Flatpak remove
+  community.general.flatpak:
+    name: '{{ item }}'
+    state: absent
+  with_items:
+    - '{{ packages.remove.flatpak | default([]) }}'
+
+- name: AUR install
+  kewlfft.aur.aur:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - '{{ packages.install.aur | default([]) }}'
+
+- name: AUR remove
+  community.general.flatpak:
+    name: '{{ item }}'
+    state: absent
+  with_items:
+    - '{{ packages.remove.aur | default([]) }}'

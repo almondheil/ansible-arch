@@ -1,13 +1,4 @@
 ---
-- name: Install chezmoi and dependencies
-  become: true
-  community.general.pacman:
-    name:
-      - chezmoi
-      - git
-      - age
-    state: present
-
 - name: Initialize chezmoi (github HTTPS)
   ansible.builtin.command:
     cmd: chezmoi init almondheil
@@ -37,8 +28,3 @@
   ansible.builtin.command:
     cmd: "chezmoi apply --force {{ home }}/.ssh"
     creates: "{{ home }}/.ssh/id_ed25519"
-
-- name: Install chezmoi_modify_manager tool
-  kewlfft.aur.aur:
-    name: chezmoi_modify_manager
-    state: present

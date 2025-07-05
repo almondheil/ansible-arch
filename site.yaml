@@ -1,0 +1,15 @@
+---
+- name: Setup laptop
+  hosts: localhost
+  roles:
+    # do setup first of all.
+    - { role: 'setup/aur', tags: ['setup', 'packages', 'setup/aur'] }
+    - { role: 'setup/flatpak', tags: ['setup', 'packages', 'setup/flatpak'] }
+    - { role: 'setup/git', tags: ['setup', 'setup/git'] }
+    - { role: 'setup/home', tags: ['setup', 'setup/home'] }
+
+    # then handle general stuff
+    - { role: 'figlet', tags: ['figlet'] }
+    - { role: 'framework', tags: ['framework'] }
+    - { role: 'packages', tags: ['packages'] }
+    - { role: 'udev', tags: ['udev'] }
