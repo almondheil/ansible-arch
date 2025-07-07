@@ -13,3 +13,4 @@
     - { role: 'framework', tags: ['framework'] }
     - { role: 'packages', tags: ['packages'] }
     - { role: 'udev', tags: ['udev'] }
+    - { role: 'caps2esc', tags: ['caps2esc'] }
