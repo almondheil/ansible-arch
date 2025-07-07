@@ -14,6 +14,7 @@
 
     # for others, order should not matter (unless marked) -- put in alphabetical.
     - { role: 'caps2esc', tags: ['caps2esc'] }
+    - { role: 'custom_tools', tags: ['custom_tools', 'tools'] }
     - { role: 'figlet', tags: ['figlet'] }
     - { role: 'framework', tags: ['framework'] }
     - { role: 'packages', tags: ['packages'] }

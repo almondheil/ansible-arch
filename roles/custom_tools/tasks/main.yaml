@@ -1,0 +1,23 @@
+---
+- name: Install rustup
+  become: true
+  ansible.builtin.package:
+    name: rustup
+    state: present
+
+- name: Set user default rustup toolchain to stable
+  ansible.builtin.command:
+    cmd: rustup default stable
+    creates: "{{ home }}/.rustup/toolchains"
+
+- name: Install latest version of ftag
+  community.general.cargo:
+    name: ftag
+    state: latest
+
+- name: Install latest version of gonote
+  ansible.builtin.command:
+    cmd: go install github.com/almondheil/gonote@latest
+    creates: "{{ home }}/.go/bin/gonote"
+  environment:
+    GOPATH: "{{ home }}/.go"
