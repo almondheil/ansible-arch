@@ -14,6 +14,7 @@ packages:
       - fprintd
       - fwupd
       - fzf
+      - gdm
       - gimp
       - gwenview
       - inkscape

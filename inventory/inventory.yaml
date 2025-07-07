@@ -1,7 +1,9 @@
+services:
+  hosts:
+    localhost
 setup:
   hosts:
     localhost
-
 syncthing:
   hosts:
     localhost

@@ -1,0 +1,6 @@
+---
+services:
+  enabled:
+    - bluetooth.service
+    - udevmon.service
+    - gdm.service

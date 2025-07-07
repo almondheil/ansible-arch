@@ -1,0 +1,14 @@
+---
+- name: Start and enable wanted services
+  ansible.builtin.systemd_service:
+    name: '{{ item }}'
+    state: started
+    enabled: true
+  with_items: '{{ services.enabled | default([]) }}'
+
+- name: Stop and disable unwanted services
+  ansible.builtin.systemd_service:
+    name: '{{ item }}'
+    state: stopped
+    enabled: false
+  with_items: '{{ services.disabled | default([]) }}'

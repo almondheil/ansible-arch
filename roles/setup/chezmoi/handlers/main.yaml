@@ -1,0 +1,8 @@
+- name: Set chezmoi remote to SSH
+  ansible.builtin.command:
+    cmd: git remote set-url origin git@github.com:almondheil/dotfiles.git
+    chdir: "{{ home }}/.local/share/chezmoi"
+  tags:
+    # disable linting of this task, otherwise it gets angry for us using git
+    # and for always reporting "changed" -- neither of which can be helped here
+    - skip_ansible_lint

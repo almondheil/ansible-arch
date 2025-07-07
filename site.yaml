@@ -1,16 +1,25 @@
 ---
 - name: Setup laptop
   hosts: localhost
+  vars_prompt:
+    - prompt: Chezmoi encrpyion passphrase
+      name: chezmoi_passphrase
   roles:
     # prioritize setup that will be needed later
-    - { role: 'setup/aur', tags: ['setup', 'packages', 'setup/aur'] }
-    - { role: 'setup/flatpak', tags: ['setup', 'packages', 'setup/flatpak'] }
-    - { role: 'setup/git_projects', tags: ['setup', 'setup/git_projects'] }
-    - { role: 'setup/home_dirs', tags: ['setup', 'setup/home_dirs'] }
+    - { role: 'setup/aur', tags: ['setup', 'packages', 'setup/aur', 'aur'] }
+    - { role: 'setup/chezmoi', tags: ['setup', 'setup/chezmoi', 'chezmoi'] }
+    - { role: 'setup/flatpak', tags: ['setup', 'packages', 'setup/flatpak', 'flatpak'] }
+    - { role: 'setup/git_projects', tags: ['setup', 'setup/git_projects', 'git_projects'] }
+    - { role: 'setup/home_dirs', tags: ['setup', 'setup/home_dirs', 'home_dirs'] }
 
     # for others, order should not matter (unless marked) -- put in alphabetical.
+    - { role: 'caps2esc', tags: ['caps2esc'] }
     - { role: 'figlet', tags: ['figlet'] }
     - { role: 'framework', tags: ['framework'] }
     - { role: 'packages', tags: ['packages'] }
     - { role: 'udev', tags: ['udev'] }
-    - { role: 'caps2esc', tags: ['caps2esc'] }
+
+    # after all other roles have run, 
+    # I assume config files have beend dropped.
+    # now is the time to start any services that may depend on those.
+    - { role: 'services', tags: ['services'] }

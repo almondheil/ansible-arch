@@ -1,10 +1,3 @@
-- name: Start and enable udevmon systemd service
-  become: true
-  ansible.builtin.service:
-    name: udevmon
-    state: started
-    enabled: true
-
 - name: Drop caps2esc udevmon configuration
   become: true
   ansible.builtin.copy:
