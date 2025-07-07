@@ -1,0 +1,13 @@
+- name: Add {{ user }} to the input group for fingerprint auth
+  become: true
+  ansible.builtin.user:
+    name: "{{ user }}"
+    groups: input
+    append: true
+
+- name: Allow fprintd_grosshack authentication for sudo
+  become: true
+  ansible.builtin.copy:
+    src: sudo-pam-unit
+    dest: /etc/pam.d/sudo
+    mode: '0644'

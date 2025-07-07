@@ -18,6 +18,7 @@
     - { role: 'framework', tags: ['framework'] }
     - { role: 'packages', tags: ['packages'] }
     - { role: 'udev', tags: ['udev'] }
+    - { role: 'fingerprint', tags: ['fingerprint'] }
 
     # after all other roles have run, 
     # I assume config files have beend dropped.
