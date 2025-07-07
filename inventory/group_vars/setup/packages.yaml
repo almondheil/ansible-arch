@@ -29,12 +29,10 @@ packages:
       - sg3_utils
       - syncthing
       - systemd-resolvconf
-      - tailscale
       - texlive
       - thunderbird
       - trash-cli
       - tree
-      - wireguard-tools
       - wl-clipboard
     flatpak:
       - '{{ package_groups.art.flatpak }}'
