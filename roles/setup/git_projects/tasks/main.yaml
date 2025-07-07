@@ -11,7 +11,7 @@
     state: directory
     mode: '0700'
 
-- name: Make sure git projects are cloned
+- name: Clone git projects to homedir (do not update if out-of-date)
   # noqa: latest
   ansible.builtin.git:
     repo: "{{ item.url }}"

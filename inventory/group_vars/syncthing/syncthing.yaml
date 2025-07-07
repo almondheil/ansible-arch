@@ -1,0 +1,4 @@
+sync_dir: '{{ home }}/sync'
+sync_symlinks:
+  - src: 'dot_todo'
+    dest: '{{ home }}/.todo'

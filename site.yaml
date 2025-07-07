@@ -2,13 +2,13 @@
 - name: Setup laptop
   hosts: localhost
   roles:
-    # do setup first of all.
+    # prioritize setup that will be needed later
     - { role: 'setup/aur', tags: ['setup', 'packages', 'setup/aur'] }
     - { role: 'setup/flatpak', tags: ['setup', 'packages', 'setup/flatpak'] }
-    - { role: 'setup/git', tags: ['setup', 'setup/git'] }
-    - { role: 'setup/home', tags: ['setup', 'setup/home'] }
+    - { role: 'setup/git_projects', tags: ['setup', 'setup/git_projects'] }
+    - { role: 'setup/home_dirs', tags: ['setup', 'setup/home_dirs'] }
 
-    # then handle general stuff
+    # for others, order should not matter (unless marked) -- put in alphabetical.
     - { role: 'figlet', tags: ['figlet'] }
     - { role: 'framework', tags: ['framework'] }
     - { role: 'packages', tags: ['packages'] }

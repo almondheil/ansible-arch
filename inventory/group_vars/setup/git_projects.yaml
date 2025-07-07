@@ -1,0 +1,11 @@
+git_projects:
+  - name: almondheil.github.io
+    url: git@github.com:almondheil/almondheil.github.io.git
+  - name: ansible-arch
+    url: git@github.com:almondheil/ansible-arch.git
+  - name: resume
+    url: git@github.com:almondheil/resume.git
+  - name: ftag
+    url: git@github.com:almondheil/ftag.git
+  - name: gonote
+    url: git@github.com:almondheil/gonote.git

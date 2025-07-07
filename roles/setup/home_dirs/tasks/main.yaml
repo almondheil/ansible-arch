@@ -1,13 +1,13 @@
 ---
-- name: Remove default home subdirectories
+- name: Remove unwanted home dirs
   ansible.builtin.file:
     path: "{{ home }}/{{ item }}"
     state: absent
-  with_items: "{{ home_subdirs.remove }}"
+  with_items: "{{ home_dirs.absent }}"
 
-- name: Create preferred home subdirectories
+- name: Create wanted home dirs
   ansible.builtin.file:
     path: "{{ home }}/{{ item }}"
     state: directory
     mode: '0700'
-  with_items: "{{ home_subdirs.create }}"
+  with_items: "{{ home_dirs.present }}"
