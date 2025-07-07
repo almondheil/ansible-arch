@@ -1,7 +1,10 @@
 ---
 services:
   enabled:
-    - bluetooth.service
-    - gdm.service
-    - steam-move-screenshots.timer
-    - udevmon.service
+    system:
+      - bluetooth.service
+      - gdm.service
+      - steam-move-screenshots.timer
+      - udevmon.service
+    user:
+      - syncthing.service
