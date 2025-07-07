@@ -2,5 +2,6 @@
 services:
   enabled:
     - bluetooth.service
-    - udevmon.service
     - gdm.service
+    - steam-move-screenshots.timer
+    - udevmon.service

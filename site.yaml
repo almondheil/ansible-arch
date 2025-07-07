@@ -20,6 +20,7 @@
     - { role: 'packages', tags: ['packages'] }
     - { role: 'udev', tags: ['udev'] }
     - { role: 'fingerprint', tags: ['fingerprint'] }
+    - { role: 'steam', tags: ['steam'] }
 
     # after all other roles have run, 
     # I assume config files have beend dropped.
