@@ -1,5 +1,0 @@
----
-- name: Install Inkscape from Flatpak
-  community.general.flatpak:
-    name: org.inkscape.Inkscape
-    state: present

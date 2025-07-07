@@ -1,5 +1,0 @@
----
-- name: Install Ungoogled Chromium
-  community.general.flatpak:
-    name: io.github.ungoogled_software.ungoogled_chromium
-    state: present

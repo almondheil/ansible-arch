@@ -1,4 +1,0 @@
-- name: Install Zotero
-  community.general.flatpak:
-    name: org.zotero.Zotero
-    state: present
