@@ -15,7 +15,6 @@ packages:
       - fwupd
       - fzf
       - gdm
-      - gimp
       - gwenview
       - inkscape
       - kitty
