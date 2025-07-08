@@ -6,11 +6,11 @@
       name: chezmoi_passphrase
   roles:
     # prioritize setup that will be needed later
-    - { role: 'setup/aur', tags: ['setup', 'packages', 'aur'] }
-    - { role: 'setup/chezmoi', tags: ['setup', 'chezmoi'] }
-    - { role: 'setup/flatpak', tags: ['setup', 'packages', 'flatpak'] }
-    - { role: 'setup/git_projects', tags: ['setup', 'git_projects'] }
-    - { role: 'setup/home_dirs', tags: ['setup', 'home_dirs'] }
+    - { role: 'aur', tags: ['setup', 'packages', 'aur', 'setup_aur'] }
+    - { role: 'chezmoi', tags: ['setup', 'chezmoi', 'setup_chezmoi'] }
+    - { role: 'flatpak', tags: ['setup', 'packages', 'flatpak', 'setup_flatpak'] }
+    - { role: 'git_projects', tags: ['setup', 'git_projects', 'setup_git_projects'] }
+    - { role: 'home_dirs', tags: ['setup', 'home_dirs', 'setup_home_dirs'] }
 
     # for others, order should not matter (unless marked) -- put in alphabetical.
     - { role: 'caps2esc', tags: ['caps2esc'] }
