@@ -5,23 +5,22 @@
     - prompt: Chezmoi encrpyion passphrase
       name: chezmoi_passphrase
   roles:
-    # prioritize setup that will be needed later
-    - { role: 'aur', tags: ['setup', 'packages', 'aur', 'setup_aur'] }
-    - { role: 'chezmoi', tags: ['setup', 'chezmoi', 'setup_chezmoi'] }
-    - { role: 'flatpak', tags: ['setup', 'packages', 'flatpak', 'setup_flatpak'] }
-    - { role: 'git_projects', tags: ['setup', 'git_projects', 'setup_git_projects'] }
-    - { role: 'home_dirs', tags: ['setup', 'home_dirs', 'setup_home_dirs'] }
-
-    # for others, order should not matter (unless marked) -- put in alphabetical.
-    - { role: 'caps2esc', tags: ['caps2esc'] }
-    - { role: 'custom_tools', tags: ['custom_tools', 'tools'] }
-    - { role: 'figlet', tags: ['figlet'] }
-    - { role: 'framework', tags: ['framework'] }
+    # first phase: package installs
+    - { role: 'aur', tags: ['packages', 'aur'] }
+    - { role: 'flatpak', tags: ['packages', 'flatpak'] }
     - { role: 'packages', tags: ['packages'] }
-    - { role: 'udev', tags: ['udev'] }
-    - { role: 'fingerprint', tags: ['fingerprint'] }
-    - { role: 'steam', tags: ['steam'] }
 
-    # after all other roles have run, I assume config files have been dropped.
-    # that makes it the right time to start any services
+    # middle phase: no dependencies between roles
+    - { role: 'caps2esc', tags: ['caps2esc'] }
+    - { role: 'chezmoi', tags: ['chezmoi'] }
+    - { role: 'custom_tools', tags: ['custom_tools'] }
+    - { role: 'figlet', tags: ['figlet'] }
+    - { role: 'fingerprint', tags: ['fingerprint'] }
+    - { role: 'framework', tags: ['framework'] }
+    - { role: 'git_projects', tags: ['git_projects'] }
+    - { role: 'home_dirs', tags: ['home_dirs'] }
+    - { role: 'steam', tags: ['steam'] }
+    - { role: 'udev', tags: ['udev'] }
+
+    # final phase: enable services, including newly-installed ones
     - { role: 'services', tags: ['services'] }
