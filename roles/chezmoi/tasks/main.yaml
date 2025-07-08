@@ -1,10 +1,4 @@
 ---
-- name: Install chezmoi
-  become: true
-  ansible.builtin.package:
-    name: chezmoi
-    state: present
-
 - name: Initialize chezmoi (github HTTPS)
   ansible.builtin.command:
     cmd: chezmoi init almondheil

@@ -1,3 +1,10 @@
+- name: Create udevmon directory
+  become: true
+  ansible.builtin.file:
+    path: /etc/interception/udevmon.d
+    state: directory
+    mode: '0755'
+
 - name: Drop caps2esc udevmon configuration
   become: true
   ansible.builtin.copy:
