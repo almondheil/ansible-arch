@@ -1,4 +1,4 @@
-- name: Add {{ user }} to the input group for fingerprint auth
+- name: Add user to the input group
   become: true
   ansible.builtin.user:
     name: "{{ user }}"

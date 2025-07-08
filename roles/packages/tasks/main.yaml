@@ -23,7 +23,7 @@
 - name: Flatpak install
   community.general.flatpak:
     name: '{{ item }}'
-    state: present 
+    state: present
   with_items:
     - '{{ packages.install.flatpak | default([]) }}'
 

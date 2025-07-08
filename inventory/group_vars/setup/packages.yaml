@@ -42,12 +42,12 @@ packages:
       - org.signal.Signal
       - org.zotero.Zotero
     aur:
-      - '{{ package_groups.art.aur}}'
+      - '{{ package_groups.art.aur }}'
       - '{{ package_groups.chezmoi.aur }}'
-      - '{{ package_groups.niri.aur}}'
+      - '{{ package_groups.niri.aur }}'
       - pam-fprint-grosshack
       - todotxt
-  remove: 
+  remove:
     system:
       - firefox
 
