@@ -4,7 +4,7 @@ These are the dependencies you need to explicitly install--just so ansible can r
 
 ```
 sudo pacman -Syu ansible python-pexpect
-ansible-galaxy collection install -r galaxy.yaml
+ansible-galaxy collection install -r requirements.yaml
 ```
 
 To run:

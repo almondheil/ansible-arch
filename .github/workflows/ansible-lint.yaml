@@ -14,4 +14,4 @@ jobs:
           args: ""
           setup_python: "true"
           working_directory: ""
-          requirements_file: "galaxy.yaml"
+          requirements_file: "requirements.yaml"
