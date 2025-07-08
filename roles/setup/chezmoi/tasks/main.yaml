@@ -39,5 +39,4 @@
 - name: Force-install SSH ed25519 key
   ansible.builtin.command:
     cmd: 'chezmoi apply --force {{ home }}/.ssh/id_ed25519 {{ home }}/.ssh/id_ed25519.pub'
-    creates:
-      - '{{ home }}/.ssh/id_ed25519'
+    creates: '{{ home }}/.ssh/id_ed25519'
