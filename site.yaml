@@ -6,8 +6,8 @@
       name: chezmoi_passphrase
   roles:
     # first phase: package installs and init stuff
-    - { role: 'aur', tags: ['packages', 'aur'] }
-    - { role: 'flatpak', tags: ['packages', 'flatpak'] }
+    - { role: 'aur', tags: ['aur'] }
+    - { role: 'flatpak', tags: ['flatpak'] }
     - { role: 'packages', tags: ['packages'] }
     - { role: 'directories', tags: ['directories'] }
 
