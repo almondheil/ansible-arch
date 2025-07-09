@@ -1,7 +1,6 @@
 packages:
   install:
     system:
-      - '{{ package_groups.art.system }}'
       - '{{ package_groups.caps2esc.system }}'
       - '{{ package_groups.chezmoi.system }}'
       - '{{ package_groups.niri.system }}'
@@ -43,7 +42,6 @@ packages:
       - org.signal.Signal
       - org.zotero.Zotero
     aur:
-      - '{{ package_groups.art.aur }}'
       - '{{ package_groups.chezmoi.aur }}'
       - '{{ package_groups.niri.aur }}'
       - pam-fprint-grosshack
