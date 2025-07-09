@@ -7,5 +7,5 @@
 
 - name: Add flathub as flatpak remote
   ansible.builtin.command:
-    cmd: flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    cmd: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     creates: /var/lib/flatpak/repo/refs/remotes/flathub
