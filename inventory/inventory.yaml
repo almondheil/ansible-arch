@@ -1,9 +1,3 @@
-services:
-  hosts:
-    localhost
-setup:
-  hosts:
-    localhost
-syncthing:
+laptop:
   hosts:
     localhost

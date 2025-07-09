@@ -48,6 +48,7 @@ packages:
       - '{{ package_groups.niri.aur }}'
       - pam-fprint-grosshack
       - todotxt
+      - yay
   remove:
     system:
       - firefox
