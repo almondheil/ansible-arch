@@ -1,0 +1,25 @@
+# dirs to create owned by {{ user }}:{{ user }}, with specified mode
+home_dirs_mode: '0700'
+home_dirs:
+  - '{{ home }}/.config/chezmoi'
+  - '{{ home }}/.local/share'
+  - '{{ home }}/.ssh'
+  - '{{ home }}/download'
+  - '{{ home }}/git'
+  - '{{ sync_dir }}'
+
+# dirs to create owned by root:root, with specified mode
+root_dirs_mode: '0755'
+root_dirs:
+  - /etc/interception/udevmon.d
+
+# dirs to delete, with no checking or backing up
+delete_dirs:
+  - '{{ home }}/Desktop'
+  - '{{ home }}/Documents'
+  - '{{ home }}/Downloads'
+  - '{{ home }}/Music'
+  - '{{ home }}/Pictures'
+  - '{{ home }}/Public'
+  - '{{ home }}/Templates'
+  - '{{ home }}/Videos'

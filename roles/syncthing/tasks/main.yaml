@@ -1,11 +1,3 @@
-- name: Create syncthing directory
-  ansible.builtin.file:
-    path: "{{ sync_dir }}"
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: "700"
-
 - name: Symlink out of syncthing directory
   ansible.builtin.file:
     src: "{{ sync_dir }}/{{ item.src }}"

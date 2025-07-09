@@ -5,10 +5,11 @@
     - prompt: Chezmoi encrpyion passphrase
       name: chezmoi_passphrase
   roles:
-    # first phase: package installs
+    # first phase: package installs and init stuff
     - { role: 'aur', tags: ['packages', 'aur'] }
     - { role: 'flatpak', tags: ['packages', 'flatpak'] }
     - { role: 'packages', tags: ['packages'] }
+    - { role: 'directories', tags: ['directories'] }
 
     # middle phase: no dependencies between roles
     - { role: 'caps2esc', tags: ['caps2esc'] }
@@ -18,7 +19,6 @@
     - { role: 'fingerprint', tags: ['fingerprint'] }
     - { role: 'framework', tags: ['framework'] }
     - { role: 'git_projects', tags: ['git_projects'] }
-    - { role: 'home_dirs', tags: ['home_dirs'] }
     - { role: 'steam', tags: ['steam'] }
     - { role: 'udev', tags: ['udev'] }
 

@@ -1,10 +1,4 @@
 ---
-- name: Create git directory
-  ansible.builtin.file:
-    path: "{{ home }}/git"
-    state: directory
-    mode: '0700'
-
 - name: Clone git projects to homedir (do not update if out-of-date)
   # noqa: latest
   ansible.builtin.git:

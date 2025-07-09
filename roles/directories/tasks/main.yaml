@@ -1,0 +1,30 @@
+---
+- name: Delete unwanted dirs
+  become: true
+  ansible.builtin.file:
+    path: '{{ item }}'
+    state: absent
+  with_items:
+    - '{{ delete_dirs }}'
+
+- name: Create user-owned home dirs
+  become: true
+  ansible.builtin.file:
+    path: '{{ item }}'
+    owner: '{{ user }}'
+    group: '{{ user }}'
+    mode: '{{ home_dirs_mode }}'
+    state: directory
+  with_items:
+    - '{{ home_dirs }}'
+
+- name: Create root-owned root dirs
+  become: true
+  ansible.builtin.file:
+    path: '{{ item }}'
+    owner: root
+    group: root
+    mode: '{{ root_dirs_mode }}'
+    state: directory
+  with_items:
+    - '{{ root_dirs }}'
