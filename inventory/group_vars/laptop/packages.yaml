@@ -55,19 +55,9 @@ packages:
 
 package_groups:
   art:
-    system:
-      # (aseprite dependencies)
-      - clang
-      - cmark
-      - compiler-rt
-      - fmt
-      - gn
-      - tinyxml2
     flatpak:
       - org.gimp.GIMP
       - org.inkscape.Inkscape
-    aur:
-      - aseprite
   caps2esc:
     system:
       - interception-tools
@@ -90,6 +80,7 @@ package_groups:
       - brightnessctl
       - fuzzel
       - gnome-keyring
+      - hyprpicker
       - mako
       - org.freedesktop.secrets
       - polkit-kde-agent
@@ -100,7 +91,6 @@ package_groups:
       - xwayland-satellite
     aur:
       - clipman
-      - hyprpicker
   programming:
     system:
       - go
