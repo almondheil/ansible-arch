@@ -1,30 +1,28 @@
 ---
-- name: Start and enable wanted system services
+- name: Enable wanted system services
+  become: true
   ansible.builtin.systemd_service:
     name: '{{ item }}'
-    state: started
     enabled: true
   with_items: '{{ services.enabled.system | default([]) }}'
 
-- name: Stop and disable unwanted system services
+- name: Disable unwanted system services
+  become: true
   ansible.builtin.systemd_service:
     name: '{{ item }}'
-    state: stopped
     enabled: false
   with_items: '{{ services.disabled.system | default([]) }}'
 
-- name: Start and enable wanted user services
+- name: Enable wanted user services
   ansible.builtin.systemd_service:
     name: '{{ item }}'
-    state: started
     enabled: true
-    scope: 'user'
+    scope: user
   with_items: '{{ services.enabled.user | default([]) }}'
 
-- name: Stop and disable unwanted user services
+- name: Disable unwanted user services
   ansible.builtin.systemd_service:
     name: '{{ item }}'
-    state: stopped
     enabled: false
-    scope: 'user'
+    scope: user
   with_items: '{{ services.disabled.user | default([]) }}'
