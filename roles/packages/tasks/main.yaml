@@ -33,23 +33,22 @@
   with_items:
     - '{{ packages.remove.flatpak | default([]) }}'
 
-# TODO: RE-ENABLE THESE BITS.
-# - name: AUR install
-#   become: true
-#   become_user: aur_user
-#   kewlfft.aur.aur:
-#     name: '{{ item }}'
-#     state: present
-#     use: makepkg
-#   with_items:
-#     - '{{ packages.install.aur | default([]) }}'
-# 
-# - name: AUR remove
-#   become: true
-#   become_user: aur_user
-#   kewlfft.aur.aur:
-#     name: '{{ item }}'
-#     state: absent
-#     use: makepkg
-#   with_items:
-#     - '{{ packages.remove.aur | default([]) }}'
+- name: AUR install
+  become: true
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: '{{ item }}'
+    state: present
+    use: makepkg
+  with_items:
+    - '{{ packages.install.aur | default([]) }}'
+
+- name: AUR remove
+  become: true
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name: '{{ item }}'
+    state: absent
+    use: makepkg
+  with_items:
+    - '{{ packages.remove.aur | default([]) }}'
