@@ -13,3 +13,8 @@ To run:
 ./run.sh
 ```
 
+If running the first time, you'll want to enable the `fresh_install` task too.
+
+```
+./run.sh --tags all,never
+```

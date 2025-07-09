@@ -24,3 +24,4 @@
 
     # final phase: enable services, including newly-installed ones
     - { role: 'services', tags: ['services'] }
+    - { role: 'fresh_install', tags: ['fresh_install', 'never'] }

@@ -1,0 +1,9 @@
+---
+- name: Force-apply all chezmoi configs
+  ansible.builtin.command:
+    cmd: chezmoi apply --force
+
+- name: Reboot system
+  become: true
+  ansible.builtin.command:
+    cmd: reboot now
