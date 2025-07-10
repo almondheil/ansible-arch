@@ -6,6 +6,7 @@ packages:
       - bat
       - biber
       - brightnessctl
+      - brightnessctl
       - chezmoi
       - cmatrix
       - cowsay
@@ -16,6 +17,7 @@ packages:
       - fzf
       - gdm
       - git
+      - gnome-font-viewer
       - gnome-keyring
       - go
       - gwenview
@@ -35,26 +37,39 @@ packages:
       - noto-fonts-emoji
       - okular
       - org.freedesktop.secrets
+      - pavucontrol
+      - pipewire
+      - pipewire-pulse
+      - playerctl
       - plocate
       - polkit-kde-agent
       - power-profiles-daemon
       - ripgrep
+      - rsync
       - rustup
+      - seahorse
       - sg3_utils
       - swaybg
+      - swayidle
       - swaylock
       - syncthing
       - systemd-resolvconf
       - systemsettings
       - texlive
+      - thunar
       - thunderbird
       - trash-cli
       - tree
+      - ttf-font-awesome
+      - ttf-inconsolata
       - ttf-inconsolata-nerd
+      - waybar
       - wget
+      - wireplumber
       - wl-clipboard
       - xdg-desktop-portal-gnome
       - xwayland-satellite
+      - zip
     flatpak:
       - com.discordapp.Discord
       - io.github.ungoogled_software.ungoogled_chromium
