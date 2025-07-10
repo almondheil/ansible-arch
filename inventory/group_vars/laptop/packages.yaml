@@ -30,6 +30,7 @@ packages:
       - lolcat
       - mako
       - man-db
+      - neovim
       - net-tools
       - niri
       - noto-fonts
@@ -44,6 +45,7 @@ packages:
       - plocate
       - polkit-kde-agent
       - power-profiles-daemon
+      - python-pynvim
       - ripgrep
       - rsync
       - rustup
