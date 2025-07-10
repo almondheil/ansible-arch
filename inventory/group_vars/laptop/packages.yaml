@@ -3,6 +3,7 @@ packages:
     system:
       - '{{ package_groups.caps2esc.system }}'
       - '{{ package_groups.chezmoi.system }}'
+      - '{{ package_groups.fonts.system }}'
       - '{{ package_groups.niri.system }}'
       - '{{ package_groups.programming.system }}'
       - bash
@@ -15,6 +16,7 @@ packages:
       - fzf
       - gdm
       - git
+      - gnome-font-viewer
       - gwenview
       - inkscape
       - kitty
@@ -26,14 +28,17 @@ packages:
       - plocate
       - power-profiles-daemon
       - ripgrep
+      - rsync
       - sg3_utils
       - syncthing
       - systemd-resolvconf
       - texlive
+      - thunar
       - thunderbird
       - trash-cli
       - tree
       - wl-clipboard
+      - zip
     flatpak:
       - '{{ package_groups.art.flatpak }}'
       - com.discordapp.Discord
@@ -68,10 +73,12 @@ package_groups:
       - chezmoi_modify_manager
   fonts:
     system:
-      - ttf-inconsolata-nerd
       - noto-fonts
-      - noto-fonts-emoji
       - noto-fonts-cjk
+      - noto-fonts-emoji
+      - ttf-font-awesome
+      - ttf-inconsolata
+      - ttf-inconsolata-nerd
   niri:
     system:
       - niri
@@ -83,8 +90,10 @@ package_groups:
       - org.freedesktop.secrets
       - polkit-kde-agent
       - swaybg
+      - swayidle
       - swaylock
       - systemsettings
+      - waybar
       - xdg-desktop-portal-gnome
       - xwayland-satellite
     aur:
