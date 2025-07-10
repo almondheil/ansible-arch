@@ -2,6 +2,7 @@
 home_dirs_mode: '0700'
 home_dirs:
   - '{{ home }}/.config/chezmoi'
+  - '{{ home }}/.fonts'
   - '{{ home }}/.local/share'
   - '{{ home }}/.ssh'
   - '{{ home }}/download'

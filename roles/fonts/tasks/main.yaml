@@ -1,0 +1,8 @@
+---
+- name: Install font files
+  ansible.posix.synchronize:
+    src: 'files/fonts/'
+    dest: '{{ home }}/.fonts/'
+  notify:
+    - Update font cache
+    - Update 32bit font cache

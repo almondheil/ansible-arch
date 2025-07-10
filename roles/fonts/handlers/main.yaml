@@ -1,0 +1,8 @@
+- name: Update font cache
+  ansible.builtin.command:
+    cmd: fc-cache
+
+- name: Update 32bit font cache
+  ansible.builtin.command:
+    cmd: fc-cache-32
+
