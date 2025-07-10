@@ -18,7 +18,6 @@
     - { role: 'figlet', tags: ['figlet'] }
     - { role: 'fingerprint', tags: ['fingerprint'] }
     - { role: 'fonts', tags: ['fonts'] }
-    - { role: 'framework', tags: ['framework'] }
     - { role: 'git_projects', tags: ['git_projects'] }
     - { role: 'steam', tags: ['steam'] }
     - { role: 'udev', tags: ['udev'] }
