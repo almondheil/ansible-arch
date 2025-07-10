@@ -88,12 +88,19 @@ package_groups:
       - hyprpicker
       - mako
       - org.freedesktop.secrets
+      - gnome-keyring
+      - seahorse
+      - pavucontrol
+      - pipewire
+      - pipewire-pulse
+      - playerctl
       - polkit-kde-agent
       - swaybg
       - swayidle
       - swaylock
       - systemsettings
       - waybar
+      - wireplumber
       - xdg-desktop-portal-gnome
       - xwayland-satellite
     aur:
