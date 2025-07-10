@@ -8,3 +8,6 @@ services:
       - udevmon.service
     user:
       - syncthing.service
+      - pipewire.service
+      - pipewire-pulse.service
+
