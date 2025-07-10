@@ -1,97 +1,75 @@
 packages:
   install:
     system:
-      - '{{ package_groups.art.system }}'
-      - '{{ package_groups.caps2esc.system }}'
-      - '{{ package_groups.chezmoi.system }}'
-      - '{{ package_groups.niri.system }}'
-      - '{{ package_groups.programming.system }}'
+      - age
       - bash
+      - bat
       - biber
+      - brightnessctl
+      - chezmoi
       - cmatrix
       - cowsay
       - fortune-mod
       - fprintd
+      - fuzzel
       - fwupd
       - fzf
       - gdm
       - git
+      - gnome-keyring
+      - go
       - gwenview
+      - hyprpicker
       - inkscape
+      - interception-caps2esc
+      - interception-tools
       - kitty
       - libdvdcss
       - lolcat
+      - mako
       - man-db
       - net-tools
+      - niri
+      - noto-fonts
+      - noto-fonts-cjk
+      - noto-fonts-emoji
       - okular
+      - org.freedesktop.secrets
       - plocate
+      - polkit-kde-agent
       - power-profiles-daemon
       - ripgrep
+      - rustup
       - sg3_utils
+      - swaybg
+      - swaylock
       - syncthing
       - systemd-resolvconf
+      - systemsettings
       - texlive
       - thunderbird
       - trash-cli
       - tree
+      - ttf-inconsolata-nerd
+      - wget
       - wl-clipboard
+      - xdg-desktop-portal-gnome
+      - xwayland-satellite
     flatpak:
-      - '{{ package_groups.art.flatpak }}'
       - com.discordapp.Discord
       - io.github.ungoogled_software.ungoogled_chromium
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
       - org.mozilla.firefox
       - org.signal.Signal
       - org.zotero.Zotero
     aur:
-      - '{{ package_groups.art.aur }}'
-      - '{{ package_groups.chezmoi.aur }}'
-      - '{{ package_groups.niri.aur }}'
+      # - aseprite
+      - chezmoi_modify_manager
+      - clipman
       - pam-fprint-grosshack
       - todotxt
       - yay
   remove:
     system:
       - firefox
-
-package_groups:
-  art:
-    flatpak:
-      - org.gimp.GIMP
-      - org.inkscape.Inkscape
-  caps2esc:
-    system:
-      - interception-tools
-      - interception-caps2esc
-  chezmoi:
-    system:
-      - chezmoi
-      - age
-    aur:
-      - chezmoi_modify_manager
-  fonts:
-    system:
-      - ttf-inconsolata-nerd
-      - noto-fonts
-      - noto-fonts-emoji
-      - noto-fonts-cjk
-  niri:
-    system:
-      - niri
-      - brightnessctl
-      - fuzzel
-      - gnome-keyring
-      - hyprpicker
-      - mako
-      - org.freedesktop.secrets
-      - polkit-kde-agent
-      - swaybg
-      - swaylock
-      - systemsettings
-      - xdg-desktop-portal-gnome
-      - xwayland-satellite
-    aur:
-      - clipman
-  programming:
-    system:
-      - go
-      - rustup
