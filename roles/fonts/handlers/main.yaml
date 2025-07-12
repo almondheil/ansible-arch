@@ -1,7 +1,7 @@
 - name: Update font cache
   ansible.builtin.command:
-    cmd: fc-cache
+    cmd: fc-cache # noqa: no-changed-when
 
 - name: Update 32bit font cache
   ansible.builtin.command:
-    cmd: fc-cache-32
+    cmd: fc-cache-32 # noqa: no-changed-when
