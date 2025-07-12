@@ -5,7 +5,7 @@
     groups: input
     append: true
 
-- name: Allow fprintd_grosshack authentication for sudo
+- name: Drop fingerprint sudo PAM unit
   become: true
   ansible.builtin.copy:
     src: sudo-pam-unit
