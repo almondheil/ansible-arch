@@ -93,3 +93,4 @@ packages:
   remove:
     system:
       - firefox
+    # NOTE: aur.remove is not supported, but flatpak.remove is

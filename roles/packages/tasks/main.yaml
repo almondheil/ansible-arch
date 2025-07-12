@@ -42,13 +42,3 @@
     use: makepkg
   with_items:
     - '{{ packages.install.aur | default([]) }}'
-
-- name: AUR remove
-  become: true
-  become_user: aur_builder
-  kewlfft.aur.aur:
-    name: '{{ item }}'
-    state: absent
-    use: makepkg
-  with_items:
-    - '{{ packages.remove.aur | default([]) }}'

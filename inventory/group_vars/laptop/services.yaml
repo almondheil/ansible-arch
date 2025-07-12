@@ -10,4 +10,3 @@ services:
       - syncthing.service
       - pipewire.service
       - pipewire-pulse.service
-
