@@ -34,6 +34,7 @@ packages:
       - neovim
       - net-tools
       - niri
+      - nnn
       - noto-fonts
       - noto-fonts-cjk
       - noto-fonts-emoji
