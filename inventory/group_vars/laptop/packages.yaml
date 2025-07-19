@@ -78,6 +78,7 @@ packages:
       - zip
     flatpak:
       - com.discordapp.Discord
+      - com.github.tchx84.Flatseal
       - io.github.ungoogled_software.ungoogled_chromium
       - org.gimp.GIMP
       - org.inkscape.Inkscape
