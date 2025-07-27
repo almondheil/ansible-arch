@@ -7,8 +7,8 @@
     - Set chezmoi remote to SSH
 
 - name: Drop filled-in chezmoi config
-  ansible.builtin.copy:
-    src: chezmoi.toml
+  ansible.builtin.template:
+    src: chezmoi.toml.j2
     dest: '{{ home }}/.config/chezmoi/chezmoi.toml'
     mode: '0600'
 
