@@ -10,6 +10,8 @@ packages:
       - chezmoi
       - cmatrix
       - cowsay
+      - cups
+      - cups-pdf
       - fd
       - fortune-mod
       - fprintd
