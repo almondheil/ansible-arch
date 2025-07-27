@@ -44,6 +44,7 @@ packages:
       - pavucontrol
       - pipewire
       - pipewire-pulse
+      - plasma
       - playerctl
       - plocate
       - polkit-kde-agent
@@ -58,8 +59,8 @@ packages:
       - swayidle
       - swaylock
       - syncthing
+      - system-config-printer
       - systemd-resolvconf
-      - systemsettings
       - texlive
       - thunar
       - thunderbird
