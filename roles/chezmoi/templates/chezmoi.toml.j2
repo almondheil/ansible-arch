@@ -11,9 +11,9 @@ encryption = "age"
     # What system are we running? Fine to leave blank, but set to "laptop", "mathlan" for system-specific config
     system = "laptop"
 
-    {% if gpg_signing_key is defined -%}
+    {% if gpg_signature_git is defined -%}
     git_gpg = true
-    gpg_signing_key = {{ gpg_signing_key | tojson }}
-    {% else %}
+    gpg_signing_key = {{ gpg_signature_git | tojson }}
+    {% else -%}
     git_gpg = false
     {% endif %}
