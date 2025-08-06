@@ -7,14 +7,16 @@ sudo pacman -Syu ansible python-pexpect
 ansible-galaxy collection install -r requirements.yaml
 ```
 
-To run:
+To run normally:
 
 ```
 ./run.sh
 ```
 
-If running the first time, you'll want to enable the `fresh_install` task too.
+**RUNNING AFTER INSTALL:** You'll probably also want the `fresh_install` tag turned on, which will force-apply user configs and reboot your system to let all configured services start up.
+
+This isn't a good idea if you don't want those things to happen, so it's off by default.
 
 ```
-./run.sh --tags all,never
+./run.sh --tags all,fresh_install
 ```

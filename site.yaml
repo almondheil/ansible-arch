@@ -23,5 +23,6 @@
     - { role: 'udev', tags: ['udev'] }
 
     # final phase: enable services, including newly-installed ones
+    # if -t fresh_install is specified we will reboot etc, otherwise skip that.
     - { role: 'services', tags: ['services'] }
-    - { role: 'fresh_install', tags: ['fresh_install', 'never'] }
+    - { role: 'fresh_install', tags: ['never', 'fresh_install'] }
