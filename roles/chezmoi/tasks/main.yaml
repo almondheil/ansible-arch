@@ -8,8 +8,8 @@
 
 - name: Drop filled-in chezmoi config
   ansible.builtin.template:
-    src: chezmoi.toml.j2
-    dest: '{{ home }}/.config/chezmoi/chezmoi.toml'
+    src: chezmoi.yaml.j2
+    dest: '{{ home }}/.config/chezmoi/chezmoi.yaml'
     mode: '0600'
 
 - name: Decrypt chezmoi age key
