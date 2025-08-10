@@ -1,3 +1,5 @@
+# vim: ft=yaml
+
 ---
 encryption: "age"
 age:
@@ -6,13 +8,17 @@ age:
 
 # System-specific data
 data:
-  email: "almond@almendra.dev"
+  # what system is running? "laptop" enables special config, but blank is OK too
   system: "laptop"
-  {% if gpg_signature_git is defined -%}
-  git_gpg:
-    enabled: true
-    signing_key: {{ gpg_signature_git | tojson }}
-  {% else -%}
-  git_gpg:
-    enabled: false
-  {% endif %}
+
+  # settings for git
+  git:
+    email: "almond@almendra.dev"
+    {% if gpg_signature_git is defined -%}
+    gpg:
+      enabled: true
+      signing_key: {{ gpg_signature_git | tojson }}
+    {% else -%}
+    gpg:
+      enabled: false
+    {% endif %}
