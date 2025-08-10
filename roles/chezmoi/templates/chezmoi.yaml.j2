@@ -9,8 +9,10 @@ data:
   email: "almond@almendra.dev"
   system: "laptop"
   {% if gpg_signature_git is defined -%}
-  git_gpg: true
-  gpg_signing_key: {{ gpg_signature_git | tojson }}
+  git_gpg:
+    enabled: true
+    signing_key: {{ gpg_signature_git | tojson }}
   {% else -%}
-  git_gpg: false
+  git_gpg:
+    enabled: false
   {% endif %}
