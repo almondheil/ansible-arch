@@ -89,7 +89,7 @@ packages:
       - org.signal.Signal
       - org.zotero.Zotero
     aur:
-      # - aseprite
+      - aseprite
       - chezmoi_modify_manager
       - clipman
       - pam-fprint-grosshack
