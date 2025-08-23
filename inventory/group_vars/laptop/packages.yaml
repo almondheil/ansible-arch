@@ -74,6 +74,9 @@ packages:
       - ttf-inconsolata-nerd
       - waybar
       - wget
+      - wine
+      - wine-mono
+      - winetricks
       - wireplumber
       - wl-clipboard
       - xdg-desktop-portal-gnome
