@@ -20,6 +20,7 @@
     - { role: 'fonts', tags: ['fonts'] }
     - { role: 'git_projects', tags: ['git_projects'] }
     - { role: 'steam', tags: ['steam'] }
+    - { role: 'shell', tags: ['shell'] }
     - { role: 'udev', tags: ['udev'] }
 
     # final phase: enable services, including newly-installed ones
