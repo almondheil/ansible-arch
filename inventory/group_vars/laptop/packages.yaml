@@ -13,6 +13,7 @@ packages:
       - cups
       - cups-pdf
       - fd
+      - fish
       - fortune-mod
       - fprintd
       - fuzzel
