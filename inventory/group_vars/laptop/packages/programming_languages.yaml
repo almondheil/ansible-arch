@@ -1,0 +1,6 @@
+_programming_languages_pkg_group:
+  install:
+    system:
+      - go
+      - python
+      - rustup

@@ -1,0 +1,9 @@
+_media_pkg_group:
+  install:
+    system:
+      - cups
+      - cups-pdf
+      - ffmpeg
+      - imagemagick
+      - libdvdcss
+      - sg3_utils

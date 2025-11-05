@@ -1,0 +1,34 @@
+_niri_pkg_grpup:
+  install:
+    system:
+      - brightnessctl
+      - fprintd
+      - fuzzel
+      - gdm
+      - gnome-keyring
+      - hyprpicker
+      - interception-caps2esc
+      - interception-tools
+      - mako
+      - niri
+      - org.freedesktop.secrets
+      - pavucontrol
+      - pipewire
+      - pipewire-pulse
+      - plasma
+      - playerctl
+      - polkit-kde-agent
+      - power-profiles-daemon
+      - swaybg
+      - swayidle
+      - swaylock
+      - system-config-printer
+      - systemd-resolvconf
+      - waybar
+      - wireplumber
+      - wl-clipboard
+      - xdg-desktop-portal-gnome
+      - xwayland-satellite
+    aur:
+      - clipman
+      - pam-fprint-grosshack

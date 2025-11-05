@@ -1,0 +1,8 @@
+_broswers_pkg_group:
+  install:
+    flatpak:
+      - io.github.ungoogled_software.ungoogled_chromium
+      - org.mozilla.firefox
+  remove:
+    system:
+      - firefox

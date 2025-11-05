@@ -1,0 +1,6 @@
+_neovim_pkg_group:
+  install:
+    system:
+      - neovim
+      - npm
+      - python-pynvim

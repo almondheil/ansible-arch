@@ -1,0 +1,7 @@
+_chezmoi_pkg_group:
+  install:
+    system:
+      - age
+      - chezmoi
+    aur:
+      - chezmoi_modify_manager

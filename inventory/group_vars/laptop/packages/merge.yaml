@@ -1,0 +1,23 @@
+# merge.yaml - merge package groups into one dictionary
+#
+# to create a group, define a var called _SOMETHING_pkg_group with any of these
+# keys. note that there is no way to specify removal of aur packages, since
+# they would be removed with pacman instead.
+#
+#   _SOMETHING_pkg_group:
+#     install:
+#       system:
+#         # list of packages to install with `pacman`
+#       flatpak:
+#         # list of packages to install with `flatpak`
+#       aur:
+#         # list of packages to install from the AUR
+#     remove:
+#       system:
+#         # list of packages to remove with `pacman`
+#       flatpak:
+#         # list of packages to remove with `flatpak`
+
+# this var will be used by the packages role, combine all defined groups into one big dict.
+packages: |
+  {{ lookup('community.general.merge_variables', '_pkg_group', pattern_type='suffix') }}

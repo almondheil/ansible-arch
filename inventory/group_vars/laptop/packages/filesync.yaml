@@ -1,0 +1,7 @@
+_filesync_pkg_group:
+  install:
+    system:
+      - openssh
+      - rsync
+      - sshfs
+      - syncthing

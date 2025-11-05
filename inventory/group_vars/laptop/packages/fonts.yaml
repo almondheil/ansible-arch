@@ -1,0 +1,9 @@
+_fonts_pkg_group:
+  install:
+    system:
+      - noto-fonts
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - ttf-font-awesome
+      - ttf-inconsolata
+      - ttf-inconsolata-nerd

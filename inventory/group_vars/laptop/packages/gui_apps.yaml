@@ -1,0 +1,19 @@
+_gui_apps_pkg_group:
+  install:
+    system:
+      - ghostty
+      - gnome-font-viewer
+      - gwenview
+      - okular
+      - thunar
+      - thunderbird
+      - wine
+      - wine-mono
+      - winetricks
+    flatpak:
+      - com.discordapp.Discord
+      - com.github.tchx84.Flatseal
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
+      - org.signal.Signal
+      - org.zotero.Zotero

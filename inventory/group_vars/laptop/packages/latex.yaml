@@ -1,0 +1,5 @@
+_latex_pkg_group:
+  install:
+    system:
+      - biber
+      - texlive

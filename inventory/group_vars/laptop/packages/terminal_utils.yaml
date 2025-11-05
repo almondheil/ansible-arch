@@ -1,0 +1,19 @@
+_terminal_utils_pkg_group:
+  install:
+    system:
+      - fish
+      - fwupd
+      - fzf
+      - git
+      - jq
+      - man-db
+      - net-tools
+      - plocate
+      - ripgrep
+      - tmux
+      - trash-cli
+      - tree
+      - wget
+      - zip
+    aur:
+      - yay

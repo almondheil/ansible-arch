@@ -1,0 +1,14 @@
+_yazi_pkg_group:
+  install:
+    system:
+      - 7zip
+      - fd
+      - ffmpeg
+      - fzf
+      - imagemagick
+      - jq
+      - poppler
+      - resvg
+      - ripgrep
+      - yazi
+      - zoxide

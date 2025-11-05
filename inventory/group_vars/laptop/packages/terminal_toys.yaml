@@ -1,0 +1,10 @@
+_terminal_toys_pkg_group:
+  install:
+    system:
+      - bat
+      - cmatrix
+      - cowsay
+      - figlet
+      - fortune-mod
+      - lolcat
+      - sl
