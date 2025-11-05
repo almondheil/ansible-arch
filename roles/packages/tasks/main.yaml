@@ -1,44 +1,35 @@
 ---
-- name: Debug package install and remove settings
+- name: Print expected packages setup
   ansible.builtin.debug:
     var: packages
 
+# TODO: if packages.install or packages.remove is undefined these default will not help us.
 - name: System install
   become: true
-  ansible.builtin.package:
-    name: '{{ item }}'
+  community.general.pacman:
+    name: '{{ packages.install.system | default([]) }}'
     state: present
-  with_items:
-    - '{{ packages.install.system | default([]) }}'
 
 - name: System remove
   become: true
   ansible.builtin.package:
-    name: '{{ item }}'
+    name: '{{ packages.remove.system | default([]) }}'
     state: absent
-  with_items:
-    - '{{ packages.remove.system | default([]) }}'
 
 - name: Flatpak install
   community.general.flatpak:
-    name: '{{ item }}'
+    name: '{{ packages.install.flatpak | default([]) }}'
     state: present
-  with_items:
-    - '{{ packages.install.flatpak | default([]) }}'
 
 - name: Flatpak remove
   community.general.flatpak:
-    name: '{{ item }}'
+    name: '{{ packages.remove.flatpak | default([]) }}'
     state: absent
-  with_items:
-    - '{{ packages.remove.flatpak | default([]) }}'
 
 - name: AUR install
   become: true
   become_user: aur_builder
   kewlfft.aur.aur:
-    name: '{{ item }}'
+    name: '{{ packages.install.aur | default([]) }}'
     state: present
     use: makepkg
-  with_items:
-    - '{{ packages.install.aur | default([]) }}'
