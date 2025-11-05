@@ -1,6 +1,7 @@
 packages:
   install:
     system:
+      - 7zip
       - age
       - bash
       - bat
@@ -13,11 +14,14 @@ packages:
       - cups
       - cups-pdf
       - fd
+      - fd
+      - ffmpeg
       - fish
       - fortune-mod
       - fprintd
       - fuzzel
       - fwupd
+      - fzf
       - fzf
       - gdm
       - ghostty
@@ -27,9 +31,11 @@ packages:
       - go
       - gwenview
       - hyprpicker
+      - imagemagick
       - inkscape
       - interception-caps2esc
       - interception-tools
+      - jq
       - kitty
       - libdvdcss
       - lolcat
@@ -52,8 +58,11 @@ packages:
       - playerctl
       - plocate
       - polkit-kde-agent
+      - poppler
       - power-profiles-daemon
       - python-pynvim
+      - resvg
+      - ripgrep
       - ripgrep
       - rsync
       - rustup
@@ -83,7 +92,9 @@ packages:
       - wl-clipboard
       - xdg-desktop-portal-gnome
       - xwayland-satellite
+      - yazi
       - zip
+      - zoxide
     flatpak:
       - com.discordapp.Discord
       - com.github.tchx84.Flatseal
