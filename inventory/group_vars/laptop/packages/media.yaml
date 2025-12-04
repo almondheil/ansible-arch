@@ -7,3 +7,5 @@ _media_pkg_group:
       - imagemagick
       - libdvdcss
       - sg3_utils
+    flatpak:
+      - org.libreoffice.LibreOffice
