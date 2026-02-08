@@ -4,10 +4,3 @@
     name: "{{ user }}"
     groups: input
     append: true
-
-- name: Drop fingerprint sudo PAM unit
-  become: true
-  ansible.builtin.copy:
-    src: sudo-pam-unit
-    dest: /etc/pam.d/sudo
-    mode: '0644'

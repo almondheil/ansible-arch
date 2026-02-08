@@ -31,4 +31,3 @@ _niri_pkg_grpup:
       - xwayland-satellite
     aur:
       - clipman
-      - pam-fprint-grosshack
