@@ -1,0 +1,9 @@
+- name: Drop pam stacks
+  become: true
+  ansible.builtin.template:
+    src: pam-stack
+    dest: /etc/pam.d/{{ item.name }}
+    mode: '0644'
+    owner: root
+    group: root
+  loop: '{{ pam_stacks }}'

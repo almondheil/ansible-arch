@@ -1,17 +1,18 @@
 ---
-- name: Setup laptop
+- name: Package and dir setup
   hosts: localhost
-  vars_prompt:
-    - prompt: Chezmoi encrpyion passphrase
-      name: chezmoi_passphrase
   roles:
-    # first phase: package installs and init stuff
     - { role: 'aur', tags: ['aur'] }
     - { role: 'flatpak', tags: ['flatpak'] }
     - { role: 'packages', tags: ['packages'] }
     - { role: 'directories', tags: ['directories'] }
 
-    # middle phase: no dependencies between roles
+- name: Per-program configuration
+  hosts: localhost
+  vars_prompt:
+    - prompt: Chezmoi encrpyion passphrase
+      name: chezmoi_passphrase
+  roles:
     - { role: 'caps2esc', tags: ['caps2esc'] }
     - { role: 'chezmoi', tags: ['chezmoi'] }
     - { role: 'custom_tools', tags: ['custom_tools'] }
@@ -19,11 +20,13 @@
     - { role: 'fingerprint', tags: ['fingerprint'] }
     - { role: 'fonts', tags: ['fonts'] }
     - { role: 'git_projects', tags: ['git_projects'] }
-    - { role: 'steam', tags: ['steam'] }
+    - { role: 'pam', tags: ['pam'] }
     - { role: 'shell', tags: ['shell'] }
+    - { role: 'steam', tags: ['steam'] }
     - { role: 'udev', tags: ['udev'] }
 
-    # final phase: enable services, including newly-installed ones
-    # if -t fresh_install is specified we will reboot etc, otherwise skip that.
+- name: Final
+  hosts: localhost
+  roles:
     - { role: 'services', tags: ['services'] }
     - { role: 'fresh_install', tags: ['never', 'fresh_install'] }
