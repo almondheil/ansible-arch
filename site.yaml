@@ -9,9 +9,6 @@
 
 - name: Per-program configuration
   hosts: localhost
-  vars_prompt:
-    - prompt: Chezmoi encrpyion passphrase
-      name: chezmoi_passphrase
   roles:
     - { role: 'caps2esc', tags: ['caps2esc'] }
     - { role: 'chezmoi', tags: ['chezmoi'] }
