@@ -26,4 +26,3 @@
   hosts: localhost
   roles:
     - { role: 'services', tags: ['services'] }
-    - { role: 'fresh_install', tags: ['never', 'fresh_install'] }
