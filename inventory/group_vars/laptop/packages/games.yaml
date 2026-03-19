@@ -1,0 +1,10 @@
+# note: steam is still installed by a unique role because
+# it needs setup I haven't incorporated into packages yet
+
+_games_pkg_group:
+  install:
+    system:
+      - gamemode
+      - lib32-gamemode
+    flatpak:
+      - io.github.everestapi.Olympus
