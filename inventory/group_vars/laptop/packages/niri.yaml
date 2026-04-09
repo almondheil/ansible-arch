@@ -6,7 +6,6 @@ _niri_pkg_grpup:
       - fuzzel
       - gdm
       - gnome-keyring
-      - hyprpicker
       - interception-caps2esc
       - interception-tools
       - mako
