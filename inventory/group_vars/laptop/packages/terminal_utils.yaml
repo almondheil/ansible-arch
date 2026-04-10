@@ -16,4 +16,5 @@ _terminal_utils_pkg_group:
       - wget
       - zip
     aur:
+      - nb
       - yay
