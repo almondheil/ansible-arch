@@ -8,3 +8,5 @@ _fonts_pkg_group:
       - ttf-inconsolata
       - ttf-inconsolata-nerd
       - ttf-nerd-fonts-symbols
+    aur:
+      - ttf-nonicons
