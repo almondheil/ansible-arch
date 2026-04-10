@@ -7,3 +7,4 @@ _fonts_pkg_group:
       - ttf-font-awesome
       - ttf-inconsolata
       - ttf-inconsolata-nerd
+      - ttf-nerd-fonts-symbols
