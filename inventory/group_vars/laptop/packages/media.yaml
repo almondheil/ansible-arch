@@ -8,4 +8,5 @@ _media_pkg_group:
       - libdvdcss
       - sg3_utils
     flatpak:
+      - com.unicornsonlsd.finamp
       - org.libreoffice.LibreOffice
