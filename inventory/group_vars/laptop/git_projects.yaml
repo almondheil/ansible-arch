@@ -7,5 +7,3 @@ git_projects:
     url: git@github.com:almondheil/resume.git
   - name: ftag
     url: git@github.com:almondheil/ftag.git
-  - name: gonote
-    url: git@github.com:almondheil/gonote.git
