@@ -1,4 +1,4 @@
-_niri_pkg_grpup:
+_niri_pkg_group:
   install:
     system:
       - brightnessctl
