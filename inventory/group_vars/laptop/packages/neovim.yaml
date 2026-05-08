@@ -4,3 +4,4 @@ _neovim_pkg_group:
       - neovim
       - npm
       - python-pynvim
+      - tree-sitter-cli
