@@ -5,6 +5,7 @@ services:
       - bluetooth.service
       - cups.service
       - gdm.service
+      - reflector.timer
       - steam-move-screenshots.timer
       - udevmon.service
     user:

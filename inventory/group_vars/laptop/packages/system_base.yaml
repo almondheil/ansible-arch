@@ -1,7 +1,8 @@
-_filesync_pkg_group:
+_system_base_pkg_group:
   install:
     system:
       - openssh
+      - reflector
       - rsync
       - sshfs
       - syncthing
