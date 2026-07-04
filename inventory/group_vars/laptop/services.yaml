@@ -6,9 +6,9 @@ services:
       - cups.service
       - gdm.service
       - reflector.timer
-      - steam-move-screenshots.timer
       - udevmon.service
     user:
+      - steam-move-screenshots.timer
       - syncthing.service
       - pipewire.service
       - pipewire-pulse.service

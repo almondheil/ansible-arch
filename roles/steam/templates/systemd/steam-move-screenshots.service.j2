@@ -1,8 +1,0 @@
-[Unit]
-Description="Move steam screenshots into Pictures dir"
-ConditionPathIsDirectory={{ home }}/.local/share/Steam/userdata
-ConditionPathIsDirectory={{ sync_dir }}/Pictures/Steam
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/bash /usr/bin/steam-move-screenshots.sh
