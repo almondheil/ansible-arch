@@ -30,4 +30,4 @@ _niri_pkg_group:
       - xwayland-satellite
     aur:
       - clipman
-      - wpets  # wayland desktop pets incl. bongocat
+      - bongocat
