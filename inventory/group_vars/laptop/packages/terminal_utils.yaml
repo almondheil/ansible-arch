@@ -5,6 +5,8 @@ _terminal_utils_pkg_group:
       - fwupd
       - fzf
       - git
+      - hostname
+      - inetutils
       - jq
       - man-db
       - net-tools
@@ -14,7 +16,7 @@ _terminal_utils_pkg_group:
       - trash-cli
       - tree
       - wget
+      - yq
       - zip
     aur:
-      - nb
       - yay
