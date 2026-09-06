@@ -16,7 +16,6 @@ _terminal_utils_pkg_group:
       - trash-cli
       - tree
       - wget
-      - yq
       - zip
     aur:
       - yay
