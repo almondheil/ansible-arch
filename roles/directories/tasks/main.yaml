@@ -11,8 +11,8 @@
   become: true
   ansible.builtin.file:
     path: '{{ item }}'
-    owner: '{{ user }}'
-    group: '{{ user }}'
+    owner: '{{ ansible_facts["env"]["USER"] }}'
+    group: '{{ ansible_facts["env"]["USER"] }}'
     mode: '{{ home_dirs_mode }}'
     state: directory
   with_items:

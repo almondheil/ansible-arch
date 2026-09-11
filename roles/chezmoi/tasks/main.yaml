@@ -2,4 +2,4 @@
 - name: Initialize chezmoi (github HTTPS)
   ansible.builtin.command:
     cmd: chezmoi init almondheil
-    creates: '{{ home }}/.local/share/chezmoi'
+    creates: '{{ ansible_facts["env"]["HOME"] }}/.local/share/chezmoi'

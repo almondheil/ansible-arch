@@ -1,6 +1,6 @@
 - name: Add user to the input group
   become: true
   ansible.builtin.user:
-    name: "{{ user }}"
+    name: '{{ ansible_facts["env"]["USER"] }}'
     groups: input
     append: true

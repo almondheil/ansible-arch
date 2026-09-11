@@ -1,12 +1,12 @@
-# dirs to create owned by {{ user }}:{{ user }}, with specified mode
+# dirs to create owned by your user, with specified mode
 home_dirs_mode: '0700'
 home_dirs:
-  - '{{ home }}/.config/chezmoi'
-  - '{{ home }}/.fonts'
-  - '{{ home }}/.local/share'
-  - '{{ home }}/.ssh'
-  - '{{ home }}/download'
-  - '{{ home }}/git'
+  - '{{ ansible_facts["env"]["HOME"] }}/.config/chezmoi'
+  - '{{ ansible_facts["env"]["HOME"] }}/.fonts'
+  - '{{ ansible_facts["env"]["HOME"] }}/.local/share'
+  - '{{ ansible_facts["env"]["HOME"] }}/.ssh'
+  - '{{ ansible_facts["env"]["HOME"] }}/download'
+  - '{{ ansible_facts["env"]["HOME"] }}/git'
   - '{{ sync_dir }}'
 
 # dirs to create owned by root:root, with specified mode
@@ -16,11 +16,11 @@ root_dirs:
 
 # dirs to delete, with no checking or backing up
 delete_dirs:
-  - '{{ home }}/Desktop'
-  - '{{ home }}/Documents'
-  - '{{ home }}/Downloads'
-  - '{{ home }}/Music'
-  - '{{ home }}/Pictures'
-  - '{{ home }}/Public'
-  - '{{ home }}/Templates'
-  - '{{ home }}/Videos'
+  - '{{ ansible_facts["env"]["HOME"] }}/Desktop'
+  - '{{ ansible_facts["env"]["HOME"] }}/Documents'
+  - '{{ ansible_facts["env"]["HOME"] }}/Downloads'
+  - '{{ ansible_facts["env"]["HOME"] }}/Music'
+  - '{{ ansible_facts["env"]["HOME"] }}/Pictures'
+  - '{{ ansible_facts["env"]["HOME"] }}/Public'
+  - '{{ ansible_facts["env"]["HOME"] }}/Templates'
+  - '{{ ansible_facts["env"]["HOME"] }}/Videos'

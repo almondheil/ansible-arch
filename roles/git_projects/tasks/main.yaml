@@ -2,8 +2,8 @@
 - name: Clone git projects to homedir (do not update if out-of-date)
   # noqa: latest
   ansible.builtin.git:
-    repo: "{{ item.url }}"
-    dest: "{{ home }}/git/{{ item.name }}"
+    repo: '{{ item.url }}'
+    dest: '{{ ansible_facts["env"]["HOME"] }}/git/{{ item.name }}'
     update: false
     accept_newhostkey: true
-  with_items: "{{ git_projects }}"
+  with_items: '{{ git_projects }}'

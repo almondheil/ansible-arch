@@ -8,7 +8,7 @@
 - name: Set user default rustup toolchain to stable
   ansible.builtin.command:
     cmd: rustup default stable
-    creates: "{{ home }}/.rustup/toolchains"
+    creates: '{{ ansible_facts["env"]["HOME"] }}/.rustup/toolchains'
 
 - name: Install latest version of ftag
   community.general.cargo:

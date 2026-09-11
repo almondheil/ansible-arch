@@ -2,5 +2,5 @@
 - name: Set default shell for user to {{ default_shell }}
   become: true
   ansible.builtin.user:
-    name: '{{ user }}'
+    name: '{{ ansible_facts["env"]["USER"] }}'
     shell: '{{ default_shell }}'
