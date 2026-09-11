@@ -5,7 +5,6 @@ _terminal_utils_pkg_group:
       - fwupd
       - fzf
       - git
-      - hostname
       - inetutils
       - jq
       - man-db
