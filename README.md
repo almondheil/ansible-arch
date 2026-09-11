@@ -5,7 +5,7 @@ To run this stuff, you need a functioning system where you can connect to the ne
 These are the dependencies you need to explicitly install--just so ansible can run properly.
 
 ```
-sudo pacman -Syu ansible python-pexpect
+sudo pacman -Syu ansible
 ansible-galaxy collection install -r requirements.yaml
 ```
 
